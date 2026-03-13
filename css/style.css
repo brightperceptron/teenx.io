@@ -26,13 +26,16 @@
  * - Sets default font color, background
  * - Enables smooth scrolling behavior
  * - Prevents horizontal overflow
+ * - Premium antialiasing and rendering
  */
 body {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
     color: #1d1d1f;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    min-height: 100vh;
 }
 
 
@@ -44,25 +47,39 @@ body {
  * Apple Glass Effect
  * Used for: Navigation bar, overlay backgrounds
  * Creates a frosted glass appearance with backdrop blur
+ * Enhanced premium effect with layered blur and saturation
  */
 .apple-glass {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: saturate(180%) blur(30px);
+    -webkit-backdrop-filter: saturate(180%) blur(30px);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /**
  * Glass Card Component
  * Used for: Feature cards, team member cards, content blocks
- * Creates a semi-transparent card with subtle blur effect
- * Includes smooth hover transitions
+ * Creates a semi-transparent card with sophisticated blur effect
+ * Premium styling with proper depth and shadows
  */
 .glass-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(20px) saturate(160%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
-    transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(24px) saturate(170%);
+    -webkit-backdrop-filter: blur(24px) saturate(170%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.06),
+                inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    transition: all 0.6s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(0, 102, 204, 0.3);
+    box-shadow: 0 12px 48px rgba(0, 102, 204, 0.12),
+                0 8px 32px rgba(31, 38, 135, 0.08),
+                inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
 }
 
 
@@ -74,10 +91,75 @@ body {
  * Hero Text Styling
  * Used for: Main heading text in hero sections
  * Creates tighter letter spacing and optimized line height
+ * Premium typography with enhanced visual impact
  */
 .hero-text {
     letter-spacing: -0.025em;
     line-height: 1.1;
+    font-weight: 800;
+}
+
+/* ========================================
+   PREMIUM BUTTON STYLING
+   ======================================== */
+
+button, .btn, a[class*="bg-"] {
+    transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
+a[class*="bg-apple-blue"],
+a[class*="bg-apple-black"],
+button[class*="bg-apple"] {
+    position: relative;
+    overflow: hidden;
+}
+
+a[class*="bg-apple-blue"]::before,
+a[class*="bg-apple-black"]::before,
+button[class*="bg-apple"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+a[class*="bg-apple-blue"]:hover::before,
+a[class*="bg-apple-black"]:hover::before,
+button[class*="bg-apple"]:hover::before {
+    left: 100%;
+}
+
+/* Premium link underline effect */
+a:not([class*="bg-"]):not([class*="hidden"]) {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:not([class*="bg-"]):not([class*="hidden"]):hover {
+    color: #0066cc;
+}
+
+/* ========================================
+   PREMIUM SECTION BACKGROUNDS
+   ======================================== */
+
+section {
+    position: relative;
+}
+
+section.bg-apple-bg {
+    background: linear-gradient(135deg, #f5f5f7 0%, #fafbfc 100%);
+}
+
+section.bg-apple-black {
+    background: linear-gradient(135deg, #1d1d1f 0%, #2e2e33 100%);
 }
 
 
@@ -102,21 +184,36 @@ body {
 /**
  * Reveal Animation System
  * Used for: Fade-in and slide-up animations on scroll
- * Creates smooth reveal effect with staggered timing
+ * Creates smooth reveal effect with premium timing
+ * Staggered entrance for visual sophistication
  */
 .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s cubic-bezier(0.2, 0, 0, 1);
+    transform: translateY(24px);
+    transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /**
  * Active Reveal State
  * Applied when element is in viewport
+ * Creates smooth entry with proper easing
  */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Staggered reveal for multiple elements */
+.reveal:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.reveal:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.reveal:nth-child(4) {
+    transition-delay: 0.3s;
 }
 
 
@@ -144,14 +241,407 @@ body {
  * Form Input Focus States
  * Used for: Input fields, textarea elements
  * Provides visual feedback when form elements are focused
- * Removes default browser outline for custom styling
+ * Premium styling with glassmorphism effect
  */
+input,
+textarea {
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+
 input:focus,
 textarea:focus {
     outline: none;
-    border-color: #0066cc;
-    ring: 2px;
-    ring-color: rgba(0, 102, 204, 0.1);
+    border-color: #0066cc !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.12),
+                inset 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+input[class*="bg-white/"],
+textarea[class*="bg-white/"] {
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* ========================================
+   8. FOOTER PROFESSIONAL STYLING
+   ======================================== */
+
+/**
+ * Premium Footer Design
+ * Used for: Professional footer sections
+ * Creates sophisticated footer with proper hierarchy and spacing
+ * Glass morphism effect with premium typography
+ */
+footer {
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 102, 204, 0.2), transparent);
+}
+
+footer h5 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+footer h5::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: linear-gradient(90deg, #0066cc, transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+footer > div > div:hover h5::before {
+    opacity: 1;
+}
+
+footer ul li {
+    transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
+footer ul li:hover {
+    transform: translateX(4px);
+}
+
+footer a {
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+    color: #86868b;
+    text-decoration: none;
+    position: relative;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #0066cc;
+    transition: width 0.3s ease;
+}
+
+footer a:hover {
+    color: #0066cc;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 102, 204, 0.15) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Footer responsive adjustments */
+@media (max-width: 768px) {
+    footer h5 {
+        font-size: 10px;
+        margin-bottom: 1rem;
+    }
+    
+    footer a {
+        font-size: 12px;
+    }
+    
+    footer ul {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ========================================
+   EXPANDABLE TEXT - SEE MORE/LESS FEATURE
+   ======================================== */
+
+.expandable-text {
+    transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.expandable-text.collapsed {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    position: relative;
+}
+
+.expandable-text.collapsed::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 4rem;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+.see-more-btn {
+    display: inline-block;
+    color: #0066cc;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    font-family: Inter, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.see-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 102, 204, 0.08);
+    border-radius: 4px;
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.see-more-btn:hover::before {
+    left: 0%;
+}
+
+.see-more-btn:hover {
+    color: #0066cc;
+    opacity: 0.8;
+    transform: translateX(2px);
+}
+
+/* ========================================
+   PREMIUM CARD & SECTION ENHANCEMENTS
+   ======================================== */
+
+/* Premium article cards */
+article {
+    transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
+}
+
+article:hover {
+    transform: translateY(-4px);
+}
+
+/* Premium image hover effect */
+img {
+    transition: all 0.6s cubic-bezier(0.2, 0, 0, 1);
+}
+
+article img {
+    filter: brightness(1);
+}
+
+article:hover img {
+    filter: brightness(1.05) saturate(1.1);
+    transform: scale(1.02);
+}
+
+/* Premium border effects */
+border {
+    transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ========================================
+   ANIMATED VECTOR BACKGROUNDS
+   ======================================== */
+
+/* Floating shape animations */
+@keyframes float-up {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0;
+    }
+    8% {
+        opacity: 0.9;
+    }
+    92% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes float-slow {
+    0% {
+        transform: translateY(0px) translateX(0px);
+        opacity: 0;
+    }
+    12% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    88% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-90vh) translateX(80px);
+        opacity: 0;
+    }
+}
+
+@keyframes float-wave {
+    0% {
+        transform: translateY(0px) translateX(-40px);
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-110vh) translateX(40px);
+        opacity: 0;
+    }
+}
+
+/* Animated blob background shapes */
+.animated-blob {
+    position: absolute;
+    opacity: 0.08;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+.blob-1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #0066cc 0%, transparent 70%);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    top: -10%;
+    right: -5%;
+    animation: float-slow 28s cubic-bezier(0.05, 0.7, 0.1, 1) infinite;
+}
+
+.blob-2 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, #0066cc 0%, transparent 70%);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    bottom: -5%;
+    left: -10%;
+    animation: float-wave 32s cubic-bezier(0.05, 0.7, 0.1, 1) infinite;
+    animation-delay: 4s;
+}
+
+.blob-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #0066cc 0%, transparent 70%);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    top: 30%;
+    right: 10%;
+    animation: float-slow 38s cubic-bezier(0.05, 0.7, 0.1, 1) infinite;
+    animation-delay: 8s;
+    opacity: 0.04;
+}
+
+/* Animated grid lines */
+.animated-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(0deg, rgba(0, 102, 204, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 204, 0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.18;
+    pointer-events: none;
+    animation: grid-move 18s linear infinite;
+}
+
+@keyframes grid-move {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+/* Floating circles animation - REMOVED */
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animated-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7ff 25%, #f0f7ff 50%, #fafbfc 75%, #ffffff 100%);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+}
+
+/* ========================================
+   EID MOON STYLING
+   ======================================== */
+
+/**
+ * Eid Moon Symbol
+ * Meaningful representation of Eid celebration
+ * Floating animation with subtle glow
+ */
+@keyframes float-gentle {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes moon-glow-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(0, 102, 204, 0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 16px rgba(0, 102, 204, 0.6));
+    }
+}
+
+.eid-moon {
+    animation: float-gentle 4s ease-in-out infinite, moon-glow-pulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(0, 102, 204, 0.45));
 }
 
 /* End of style.css */

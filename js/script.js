@@ -62,4 +62,57 @@ const observer = new IntersectionObserver((entries) => {
  */
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+/* ========================================
+   EXPANDABLE TEXT - SEE MORE/LESS FEATURE
+   ======================================== */
+
+/**
+ * See More / See Less Functionality
+ * 
+ * Purpose:
+ * - Adds ability to expand/collapse long paragraphs
+ * - Shows first 3 lines by default with gradient fade
+ * - Dynamically creates "See More" button
+ * 
+ * Usage:
+ * Add class "expandable-text" to any paragraph
+ * Button will auto-generate below the paragraph
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const expandableTexts = document.querySelectorAll('.expandable-text');
+    
+    expandableTexts.forEach(textElement => {
+        // Add collapsed class by default
+        textElement.classList.add('collapsed');
+        
+        // Create see more button
+        const button = document.createElement('button');
+        button.className = 'see-more-btn';
+        button.type = 'button';
+        button.setAttribute('aria-expanded', 'false');
+        button.textContent = 'See More';
+        
+        // Insert button after the text element
+        textElement.parentNode.insertBefore(button, textElement.nextSibling);
+        
+        // Toggle functionality
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isCollapsed = textElement.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                textElement.classList.remove('collapsed');
+                textElement.classList.add('expanded');
+                button.textContent = 'See Less';
+                button.setAttribute('aria-expanded', 'true');
+            } else {
+                textElement.classList.add('collapsed');
+                textElement.classList.remove('expanded');
+                button.textContent = 'See More';
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+});
+
 /* End of script.js */
