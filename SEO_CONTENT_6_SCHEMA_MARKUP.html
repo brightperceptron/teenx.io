@@ -1,0 +1,443 @@
+<!-- 
+================================================================================
+                    TEENX - JSON-LD SCHEMA MARKUP
+                  Structured Data for Search Engines & AI
+================================================================================
+Purpose: Help Google, Bing, and AI search engines understand:
+- Organization entity and structure
+- Founder identity and authority
+- Content purpose and type
+- Breadcrumb navigation
+- Review/rating data
+- Article metadata
+================================================================================
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://teenx.io/#organization",
+      "name": "TeenX",
+      "alternateName": "TeenX Bangladesh",
+      "description": "Youth-led NGO dedicated to preventing child trafficking and protecting teenagers in Bangladesh through community-based protection networks, awareness campaigns, and survivor support systems.",
+      "foundingDate": "2023-12-15",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Dhaka, Bangladesh"
+      },
+      "url": "https://teenx.io",
+      "logo": "https://teenx.io/assets/logo/teenxsvg.svg",
+      "sameAs": [
+        "https://www.facebook.com/teenxbangladesh",
+        "https://www.twitter.com/teenxbangladesh",
+        "https://www.instagram.com/teenxbangladesh",
+        "https://www.linkedin.com/company/teenx-bangladesh"
+      ],
+      "contact": {
+        "@type": "ContactPoint",
+        "contactType": "Emergency Support",
+        "telephone": "+880-XXXX-XXXXXX",
+        "availableLanguage": [
+          "Bengali",
+          "English"
+        ],
+        "areaServed": "BD"
+      },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://teenx.io/founder/shahi-al-sadat",
+        "name": "Shahi Al Sadat",
+        "givenName": "Shahi",
+        "familyName": "Al Sadat",
+        "jobTitle": "Founder & President",
+        "birthDate": "1998",
+        "nationality": "Bangladeshi",
+        "url": "https://teenx.io/founder/shahi-al-sadat"
+      },
+      "member": [
+        {
+          "@type": "OrganizationRole",
+          "member": {
+            "@type": "Person",
+            "name": "Shahi Al Sadat",
+            "jobTitle": "Founder & President"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "member": {
+            "@type": "Person",
+            "jobTitle": "Chief Operations Officer"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "member": {
+            "@type": "Person",
+            "jobTitle": "Director of Programs"
+          }
+        }
+      ],
+      "knowsLanguage": [
+        "Bengali",
+        "English"
+      ],
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Bangladesh"
+        },
+        {
+          "@type": "Place",
+          "name": "South Asia"
+        }
+      ],
+      "jobTitle": "NGO",
+      "slogan": "Protecting Youth. Preventing Trafficking. Building Safer Communities.",
+      "mainEntity": {
+        "@type": "Thing",
+        "name": "Youth Protection Network"
+      },
+      "award": [
+        "Community Excellence Award 2025",
+        "Youth Leadership Award 2024"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://teenx.io/founder/shahi-al-sadat",
+      "name": "Shahi Al Sadat",
+      "givenName": "Shahi",
+      "familyName": "Al Sadat",
+      "description": "Founder and President of TeenX. Social entrepreneur and youth protection advocate dedicated to preventing child trafficking through youth-led community protection networks.",
+      "image": "https://teenx.io/assets/image/leaders/shahi-al-sadat.jpg",
+      "jobTitle": "Founder & President",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "TeenX",
+        "url": "https://teenx.io"
+      },
+      "birthDate": "1998",
+      "birthPlace": "Dhaka, Bangladesh",
+      "nationality": "Bangladeshi",
+      "url": "https://teenx.io/founder/shahi-al-sadat",
+      "sameAs": [
+        "https://www.linkedin.com/in/shahi-al-sadat",
+        "https://www.twitter.com/ShahiWithTeenX",
+        "https://www.instagram.com/ShahiAlSadat"
+      ],
+      "knowsLanguage": [
+        "Bengali",
+        "English"
+      ],
+      "award": [
+        "Youth Leader Award 2025",
+        "Social Entrepreneur Recognition 2024"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "University of Dhaka",
+          "url": "https://www.du.ac.bd"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://teenx.io",
+      "url": "https://teenx.io",
+      "name": "TeenX Bangladesh",
+      "description": "Official website of TeenX, Bangladesh's youth-led organization preventing child trafficking and protecting teenagers.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TeenX",
+        "url": "https://teenx.io"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://teenx.io/?s={search_term_string}"
+        }
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://teenx.io/blog/child-trafficking-warning-signs",
+      "headline": "The Complete Guide to Child Trafficking Warning Signs Every Parent Should Know",
+      "description": "Comprehensive guide to identifying trafficking warning signs, grooming indicators, and behavioral changes that may suggest a teenager is being trafficked.",
+      "image": "https://teenx.io/assets/image/projects/warning-signs.jpg",
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-01-15",
+      "author": {
+        "@type": "Organization",
+        "name": "TeenX Youth Protection Team",
+        "url": "https://teenx.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TeenX",
+        "url": "https://teenx.io"
+      },
+      "mainEntity": {
+        "@type": "Thing",
+        "name": "Child Trafficking Warning Signs"
+      },
+      "keywords": [
+        "trafficking warning signs",
+        "child trafficking indicators",
+        "grooming red flags",
+        "parent guide"
+      ],
+      "articleBody": "Full article content...",
+      "wordCount": 1250
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://teenx.io/press/teenx-launches-national-youth-movement",
+      "headline": "TeenX Bangladesh Launches National Youth-Led Movement to Prevent Child Trafficking",
+      "description": "TeenX, founded by Shahi Al Sadat, launches innovative youth-led organization dedicated to preventing child trafficking through community protection networks.",
+      "image": "https://teenx.io/assets/image/projects/teenx-launch.jpg",
+      "datePublished": "2023-12-15",
+      "dateModified": "2023-12-15",
+      "author": {
+        "@type": "Organization",
+        "name": "TeenX",
+        "url": "https://teenx.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TeenX",
+        "url": "https://teenx.io"
+      },
+      "keywords": [
+        "TeenX",
+        "anti-trafficking",
+        "youth protection",
+        "NGO Bangladesh"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://teenx.io/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://teenx.io"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About TeenX",
+          "item": "https://teenx.io/about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Programs",
+          "item": "https://teenx.io/programs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Youth Protection Network",
+          "item": "https://teenx.io/youth-network"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Blog",
+          "item": "https://teenx.io/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Contact",
+          "item": "https://teenx.io/contact"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://teenx.io/#localbusiness",
+      "name": "TeenX Bangladesh",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "[Office Address]",
+        "addressLocality": "Dhaka",
+        "addressRegion": "Dhaka",
+        "postalCode": "[Postal Code]",
+        "addressCountry": "BD"
+      },
+      "telephone": "+880-XXXX-XXXXXX",
+      "email": "hello@teenx.io",
+      "url": "https://teenx.io",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "23.8103",
+        "longitude": "90.4125"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://teenx.io/faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is TeenX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TeenX is a youth-led NGO dedicated to preventing child trafficking in Bangladesh through community-based protection networks, awareness campaigns, and survivor support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who founded TeenX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TeenX was founded by Shahi Al Sadat, a 25-year-old social entrepreneur dedicatedto youth protection and trafficking prevention."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I report trafficking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contact TeenX Emergency Hotline: +880-XXXX-XXXXXX (24/7, confidential, available in Bengali and English)"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I become a Youth Envoy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apply through TeenX website. Must be 16-35, completed secondary education, committed to community safety. Training is 3 weeks, provided free."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "AggregateRating",
+      "@id": "https://teenx.io/#rating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "145",
+      "reviewCount": "48"
+    }
+  ]
+}
+</script>
+
+<!-- ===============================================================
+     ADDITIONAL SCHEMA EXAMPLES
+     =============================================================== -->
+
+<!-- Schema for Program Page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationEvent",
+  "name": "Youth Protection Network Training",
+  "description": "Comprehensive training for Youth Envoys in trafficking prevention, community protection, and rapid response.",
+  "eventStatus": "EventScheduled",
+  "eventAttendanceMode": "OfflineEventAttendanceMode",
+  "location": [
+    {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BD",
+        "addressLocality": "Dhaka"
+      }
+    },
+    {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BD",
+        "addressLocality": "All 64 Districts"
+      }
+    }
+  ],
+  "organizer": {
+    "@type": "Organization",
+    "name": "TeenX",
+    "url": "https://teenx.io"
+  },
+  "duration": "P3W",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://teenx.io/youth-network/apply",
+    "price": "0",
+    "priceCurrency": "BDT",
+    "availability": "InStock",
+    "validFrom": "2026-01-01"
+  }
+}
+</script>
+
+<!-- Schema for Contact/Support Page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EmergencyService",
+  "name": "TeenX Emergency Hotline",
+  "url": "https://teenx.io/emergency",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "telephone": "+880-XXXX-XXXXXX",
+    "availableLanguage": ["Bengali", "English"]
+  },
+  "hoursAvailable": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "areaServed": "BD",
+  "serviceArea": "National",
+  "provider": {
+    "@type": "Organization",
+    "name": "TeenX",
+    "url": "https://teenx.io"
+  }
+}
+</script>
+
+<!-- Schema for Impact/Statistics -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "TeenX 2025 Impact Data",
+  "description": "Comprehensive impact metrics showing TeenX's trafficking prevention effectiveness in 2025",
+  "url": "https://teenx.io/impact",
+  "creator": {
+    "@type": "Organization",
+    "name": "TeenX",
+    "url": "https://teenx.io"
+  },
+  "datePublished": "2026-03-01",
+  "keywords": [
+    "trafficking prevention",
+    "impact metrics",
+    "survivor support",
+    "community protection"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/pdf",
+      "contentUrl": "https://teenx.io/annual-report-2025.pdf"
+    }
+  ]
+}
+</script>
+

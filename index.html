@@ -2,55 +2,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ========================================
+         TeenX Bangladesh Official Website
+         ======================================== 
+         
+         Project: TeenX Bangladesh
+         Description: National Youth Development Infrastructure Website
+         Version: 1.0.0
+         Last Updated: March 2026
+         
+         Folder Structure:
+         - index.html (Main entry point)
+         - assets/
+           - logo/ (Brand assets)
+           - image/ (Project & team images)
+         - css/
+           - style.css (Main stylesheet)
+         - js/
+           - script.js (Core functionality)
+         
+         ======================================== -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeenX Bangladesh — National Youth Development Infrastructure</title>
+    <meta name="description" content="TeenX is a youth-led NGO in Bangladesh preventing child trafficking and teenage rape through awareness, protection networks, youth-led action, and rapid survivor support. Founded by Shahi Al Sadat.">
+    <meta name="keywords" content="TeenX, TeenX NGO, TeenX Bangladesh, Shahi Al Sadat, child trafficking prevention, teen protection, NGO Bangladesh, youth protection network, rape prevention, teenager safety">
+    <meta name="author" content="TeenX Bangladesh">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#0066cc">
+    <link rel="canonical" href="https://teenx.io">
+    <link rel="icon" href="assets/logo/teenxsvg.svg" type="image/svg+xml">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://teenx.io" />
+    <meta property="og:title" content="TeenX — Youth-Led NGO for Trafficking Prevention & Teen Protection" />
+    <meta property="og:description" content="Preventing child trafficking. Protecting teenagers from rape. Building awareness. Creating support networks. TeenX Bangladesh is a youth-led organization led by Shahi Al Sadat." />
+    <meta property="og:image" content="https://teenx.io/assets/image/teenx-og-image.jpg" />
+    <meta property="og:site_name" content="TeenX Bangladesh" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TeenX Bangladesh" />
+    <meta name="twitter:description" content="National youth-led organization for trafficking prevention and teenage protection" />
+    <meta name="twitter:image" content="https://teenx.io/assets/image/teenx-og-image.jpg" />
+    
+    <!-- Alternative Language Links -->
+    <link rel="alternate" hreflang="en" href="https://teenx.io" />
+    <link rel="alternate" hreflang="bn" href="https://teenx.io/bn" />
+    
+    <title>TeenX — Preventing Child Trafficking & Protecting Teenagers in Bangladesh</title>
+    
+    <!-- ========================================
+         EXTERNAL DEPENDENCIES
+         ======================================== -->
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KGPCNHNL');</script>
+<!-- End Google Tag Manager -->
+    <!-- Tailwind CSS for utility-first styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Google Fonts: Inter typeface family (Font Display: Swap for better LCP) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for reactive components and state management (Deferred for performance) -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- ========================================
+         TAILWIND CONFIGURATION
+         ======================================== -->
     <script>
+        /* 
+         * Tailwind CSS Extended Configuration
+         * Adds custom color palette and font family
+         * Applied globally across the entire application
+         */
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    /* Custom font stack using Inter */
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'] 
+                    },
+                    /* Apple-inspired color palette */
                     colors: {
                         apple: {
-                            black: '#1d1d1f',
-                            bg: '#f5f5f7',
-                            blue: '#0066cc',
-                            gray: '#86868b'
+                            black: '#1d1d1f',      /* Primary dark color */
+                            bg: '#f5f5f7',         /* Light background */
+                            blue: '#0066cc',       /* Primary accent color */
+                            gray: '#86868b'        /* Secondary text color */
                         }
                     }
                 }
             }
         }
     </script>
-    <style>
-        body { background-color: #ffffff; color: #1d1d1f; -webkit-font-smoothing: antialiased; overflow-x: hidden; scroll-behavior: smooth; }
-        .apple-glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
-        .glass-card { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(20px) saturate(160%); border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04); transition: all 0.5s cubic-bezier(0.2, 0, 0, 1); }
-        .hero-text { letter-spacing: -0.025em; line-height: 1.1; }
-        [x-cloak] { display: none !important; }
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.2, 0, 0, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .container-custom { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        
-        /* Netlify Form Styles */
-        input:focus, textarea:focus { outline: none; border-color: #0066cc; ring: 2px; ring-color: rgba(0, 102, 204, 0.1); }
-    </style>
+    
+    <!-- ========================================
+         LOCAL STYLESHEET
+         ======================================== 
+         Contains:
+         - Glass morphism effects
+         - Animation keyframes
+         - Form styling
+         - Custom utility classes
+    -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body x-data="{ mobileMenu: false, activeTab: 'leadership' }" :class="mobileMenu ? 'overflow-hidden' : ''">
-
-    <!-- Navigation -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGPCNHNL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- ========================================
+         NAVIGATION BAR COMPONENT
+         ======================================== 
+         
+         Features:
+         - Fixed positioning with glass morphism effect
+         - Responsive navigation (desktop & mobile)
+         - Logo from assets/logo/ folder
+         - Navigation links to main sections
+         - Mobile hamburger menu toggle
+         
+         State Management (Alpine.js):
+         - mobileMenu: Controls mobile menu visibility
+         - Toggles on hamburger click
+    -->
     <nav class="fixed top-0 w-full z-[110] apple-glass border-b border-gray-200/40">
         <div class="container-custom h-[52px] flex justify-between items-center text-[11px] font-bold uppercase tracking-wider">
             <div class="flex items-center space-x-10">
-                <a href="#" class="text-xl font-extrabold tracking-tighter normal-case"><img src="https://teenxmobile.app/Assets/logo/logo.svg" alt="teenx logo" width="120" height="120"></a>
+                <a href="#" class="text-xl font-extrabold tracking-tighter normal-case"><img src="assets/logo/teenxsvg.svg" alt="TeenX Bangladesh Logo" width="120" height="40" loading="eager"></a>
                 <div class="hidden lg:flex space-x-8 text-apple-black/60">
                     <a href="#structure" class="hover:text-apple-black transition">Structure</a>
                     <a href="#roadmap" class="hover:text-apple-black transition">Roadmap</a>
-                    <a href="#governance" class="hover:text-apple-black transition">Governance</a>
                     <a href="#network" class="hover:text-apple-black transition">Network</a>
+                    <a href="achievements.html" class="hover:text-apple-black transition">Achievements</a>
+                    <a href="blog.html" class="hover:text-apple-black transition">Blog</a>
+                    <a href="programs.html" class="hover:text-apple-black transition">Programs</a>
                 </div>
             </div>
             <div class="flex items-center space-x-6">
@@ -67,96 +161,310 @@
             <div class="flex flex-col space-y-4">
                 <a href="#structure" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Structure</a>
                 <a href="#roadmap" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Roadmap</a>
-                <a href="#governance" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Governance</a>
                 <a href="#network" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Network</a>
+                <a href="achievements.html" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Achievements</a>
+                <a href="blog.html" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Blog</a>
+                <a href="programs.html" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Programs</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- ========================================
+         HERO SECTION
+         ======================================== 
+         
+         Features:
+         - Main headline with brand messaging
+         - Prominent call-to-action buttons
+         - Under construction notice
+         - Reveal animation on scroll
+    -->
     <header class="pt-40 pb-20 md:pt-56 md:pb-32 px-6">
         <div class="container-custom text-center reveal active">
-             <span style="color: red;" class="text-warning font-bold text-xs uppercase tracking-[0.3em] mb-6 block">Under Construction !</span>
-            <span class="text-apple-blue font-bold text-xs uppercase tracking-[0.3em] mb-6 block">National Excellence Infrastructure</span>
-            <h1 class="hero-text text-[40px] sm:text-7xl md:text-[90px] font-bold mb-8">Architecting the <br> <span class="text-apple-blue">Next Generation.</span></h1>
+            <span class="text-apple-blue font-bold text-xs uppercase tracking-[0.3em] mb-6 block">Preventing Trafficking • Protecting Teenagers</span>
+            <h1 class="hero-text text-[40px] sm:text-7xl md:text-[90px] font-bold mb-8">No Child Should Be <br> <span class="text-apple-blue">Trafficked.</span></h1>
             <p class="text-lg md:text-2xl text-apple-gray max-w-3xl mx-auto font-medium mb-12">
-                TeenX Bangladesh is the premier institutional body dedicated to scaling youth-led innovation into sustainable national policies and frameworks.
+                TeenX is a youth-led NGO in Bangladesh preventing child trafficking and teenage rape through community awareness, youth-led protection networks, and rapid survivor support systems.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a href="#join" class="w-full sm:w-auto bg-apple-blue text-white px-10 py-4 rounded-full font-bold text-sm shadow-xl shadow-blue-500/20 transition hover:scale-105">Join the Secretariat</a>
-                <a href="#governance" class="text-apple-black font-semibold text-sm hover:underline">Download Audit 2024 ›</a>
+                <a href="#impact" class="w-full sm:w-auto bg-apple-blue text-white px-10 py-4 rounded-full font-bold text-sm shadow-xl shadow-blue-500/20 transition hover:scale-105">See Our Impact</a>
+                <a href="programs.html" class="text-apple-black font-semibold text-sm hover:underline">Explore Programs ›</a>
             </div>
         </div>
     </header>
 
-    <!-- Institutional Structure (Tabs) -->
+    <!-- ========================================
+         2025 IMPACT METRICS SECTION
+         ======================================== 
+         
+         Features:
+         - Key statistics from 2025
+         - Trafficking prevention cases
+         - Survivor support metrics
+         - Community reach numbers
+         - Youth envoy network scale
+    -->
+    <section id="impact" class="py-24 bg-apple-bg">
+        <div class="container-custom">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight">2025 Impact by the Numbers</h2>
+                <p class="text-apple-gray text-lg max-w-2xl mx-auto mb-14">TeenX's 2025 results demonstrate impact across prevention, awareness, and survivor support</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 reveal">
+                <!-- Trafficking Cases Prevented -->
+                <div class="glass-card rounded-[2rem] p-8 text-center">
+                    <div class="text-5xl font-black text-apple-blue mb-4">240+</div>
+                    <h3 class="text-xl font-bold mb-2">Trafficking Cases</h3>
+                    <p class="text-apple-gray text-sm">Prevented or responded to through community networks and rapid intervention.</p>
+                </div>
+                <!-- Youth Envoys Network -->
+                <div class="glass-card rounded-[2rem] p-8 text-center">
+                    <div class="text-5xl font-black text-apple-blue mb-4">1,000+</div>
+                    <h3 class="text-xl font-bold mb-2">Youth Envoys Trained</h3>
+                    <p class="text-apple-gray text-sm">Community-based protection coordinators across all 64 districts of Bangladesh.</p>
+                </div>
+                <!-- Survivor Support -->
+                <div class="glass-card rounded-[2rem] p-8 text-center">
+                    <div class="text-5xl font-black text-apple-blue mb-4">99%</div>
+                    <h3 class="text-xl font-bold mb-2">Survivor Survival Rate</h3>
+                    <p class="text-apple-gray text-sm">Among supported trafficking survivors with comprehensive rehabilitation services.</p>
+                </div>
+                <!-- Community Reach -->
+                <div class="glass-card rounded-[2rem] p-8 text-center">
+                    <div class="text-5xl font-black text-apple-blue mb-4">5M+</div>
+                    <h3 class="text-xl font-bold mb-2">People Reached</h3>
+                    <p class="text-apple-gray text-sm">Through awareness campaigns, education programs, and community protection initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CORE MISSION & FOUNDER SECTION
+         ======================================== 
+         
+         Features:
+         - Mission statement clarity
+         - Why TeenX exists
+         - Founder story (Shahi Al Sadat)
+         - Vision for change
+         - Social proof and credibility
+    -->
+    <section id="mission" class="py-24 bg-white">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-12 reveal">Why TeenX Exists</h2>
+                <div class="space-y-8 mb-16">
+                    <p class="text-apple-gray text-lg leading-relaxed reveal">
+                        TeenX was founded because existing systems were failing vulnerable teenagers. Every year, thousands of children and adolescents face trafficking, rape, and exploitation — yet most fall through the gaps of institutional protection systems.
+                    </p>
+                    <p class="text-apple-gray text-lg leading-relaxed reveal">
+                        <strong>Founder Shahi Al Sadat</strong> recognized that teenagers themselves are the most powerful protection force in their own communities. By training, empowering, and supporting youth as "Youth Envoys," TeenX transforms teenagers from vulnerable targets into active protectors of their neighbors, schools, and communities.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                    <div class="reveal">
+                        <h3 class="text-2xl font-bold mb-6">Our Mission</h3>
+                        <p class="text-apple-gray leading-relaxed">
+                            TeenX actively works to prevent child trafficking and teenage rape by building awareness, establishing protection networks, catalyzing youth-led action, and creating rapid support systems for vulnerable teenagers. We expose exploitation, protect victims, and mobilize communities to stand against trafficking and sexual violence.
+                        </p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="text-2xl font-bold mb-6">Our Vision</h3>
+                        <p class="text-apple-gray leading-relaxed">
+                            A world where no child is trafficked and no teenager becomes a victim of rape — a society where young people are protected, communities are vigilant, and justice stands stronger than exploitation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-apple-bg p-12 rounded-3xl reveal">
+                    <h3 class="text-2xl font-bold mb-6">About Shahi Al Sadat, Founder</h3>
+                    <p class="text-apple-gray leading-relaxed mb-4">
+                        Shahi Al Sadat is a 28-year-old social entrepreneur and youth protection advocate. With a background in Psychology and Sociology from University of Dhaka, Shahi witnessed the failures of institutional systems firsthand. In 2023, he founded TeenX with a radical belief: teenagers have the capacity and responsibility to protect teenagers.
+                    </p>
+                    <p class="text-apple-gray leading-relaxed">
+                        Under Shahi's leadership, TeenX has trained 1,000+ Youth Envoys, prevented 240+ trafficking cases, and reached 5 million people with protection awareness. His philosophy centers on youth agency, data-driven compassion, and systemic change through community empowerment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TEAM & LEADERSHIP STRUCTURE SECTION
+         ======================================== 
+         
+         Features:
+         - Tabbed interface with two views
+         - Leadership tab: Executive roles and responsibilities
+         - Secretariat tab: Department structure
+         - Glass card components for team members
+         - Reveal animation effects
+         
+         State Management (Alpine.js):
+         - activeTab: Switches between 'leadership' and 'secretariat'
+         - Updates via button clicks
+    -->
     <section id="structure" class="py-24 bg-apple-bg">
         <div class="container-custom">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Institutional Hierarchy</h2>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Leadership & Team Structure</h2>
                 <div class="flex justify-center mt-10 space-x-2 p-1 bg-gray-200/50 rounded-full max-w-md mx-auto">
                     <button @click="activeTab = 'leadership'" :class="activeTab === 'leadership' ? 'bg-white shadow-sm' : ''" class="flex-1 py-2 px-6 rounded-full text-[11px] font-bold transition">Leadership</button>
-                    <button @click="activeTab = 'secretariat'" :class="activeTab === 'secretariat' ? 'bg-white shadow-sm' : ''" class="flex-1 py-2 px-6 rounded-full text-[11px] font-bold transition">Secretariat</button>
+                    <button @click="activeTab = 'fullteam'" :class="activeTab === 'fullteam' ? 'bg-white shadow-sm' : ''" class="flex-1 py-2 px-6 rounded-full text-[11px] font-bold transition">Full Team</button>
                 </div>
             </div>
 
             <div x-show="activeTab === 'leadership'" class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
                 <!-- Executive Roles -->
                 <div class="glass-card rounded-[2rem] p-8 text-center">
-                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden">
-                        <div class="w-full h-full flex items-center justify-center text-gray-400">
-                            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-                        </div>
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden" role="img" aria-label="Shahi Al Sadat, Founder & President">
+                        <img src="assets/image/leaders/shahi-al-sadat.jpg" alt="Shahi Al Sadat - TeenX Founder & President" width="96" height="96" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <h3 class="text-xl font-bold">Shahi Al Sadat</h3>
                     <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-2">Founder & President</p>
-                    <p class="text-apple-gray text-sm mt-4">Oversees national policy alignment and global stakeholder relations.</p>
+                    <p class="text-apple-gray text-sm mt-4">Leads TeenX's vision for youth-led trafficking prevention and teen protection across Bangladesh.</p>
                 </div>
                 <div class="glass-card rounded-[2rem] p-8 text-center">
-                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden">
-                        <div class="w-full h-full flex items-center justify-center text-gray-400">
-                            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-                        </div>
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden" role="img" aria-label="Chief of Operations">
+                        <img src="assets/image/leaders/leader-2.jpeg" alt="Chief of Operations - TeenX" width="96" height="96" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <h3 class="text-xl font-bold">Chief of Operations</h3>
-                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-2">Program Execution</p>
-                    <p class="text-apple-gray text-sm mt-4">Directs district-level envoy networks and operational transparency.</p>
+                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-2">Program Implementation</p>
+                    <p class="text-apple-gray text-sm mt-4">Oversees Youth Envoy networks across 64 districts and field program execution.</p>
                 </div>
                 <div class="glass-card rounded-[2rem] p-8 text-center">
-                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden">
-                        <div class="w-full h-full flex items-center justify-center text-gray-400">
-                            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-                        </div>
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden" role="img" aria-label="Director of Research">
+                        <img src="assets/image/leaders/leader-3.jpeg" alt="Director of Research - TeenX" width="96" height="96" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <h3 class="text-xl font-bold">Director of Research</h3>
-                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-2">Innovation & Policy</p>
-                    <p class="text-apple-gray text-sm mt-4">Leads the data-driven policy drafting team and technical research units.</p>
+                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-2">Research & Innovation</p>
+                    <p class="text-apple-gray text-sm mt-4">Leads data-driven research and evidence-based policy advocacy for trafficking prevention.</p>
                 </div>
             </div>
 
-            <div x-show="activeTab === 'secretariat'" class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
-                <!-- Secretariat Departments -->
+            <div x-show="activeTab === 'fullteam'" class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
+                <!-- Full Team Departments & Roles -->
                 <div class="p-6 border-l-2 border-apple-blue">
-                    <h4 class="font-bold">FinOps</h4>
-                    <p class="text-apple-gray text-xs mt-2">Financial auditing & sustainability management.</p>
+                    <h4 class="font-bold">Head of Programs</h4>
+                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-1">Program Coordination</p>
+                    <p class="text-apple-gray text-xs mt-2">Leads implementation of all four core programs across 64 districts and manages Youth Envoy networks for trafficking prevention.</p>
                 </div>
                 <div class="p-6 border-l-2 border-apple-blue">
-                    <h4 class="font-bold">Legal & Policy</h4>
-                    <p class="text-apple-gray text-xs mt-2">Legislative drafting and compliance units.</p>
+                    <h4 class="font-bold">Finance Director</h4>
+                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-1">FinOps & Sustainability</p>
+                    <p class="text-apple-gray text-xs mt-2">Manages financial operations, fund management, and organizational sustainability planning for long-term impact.</p>
                 </div>
                 <div class="p-6 border-l-2 border-apple-blue">
-                    <h4 class="font-bold">Communications</h4>
-                    <p class="text-apple-gray text-xs mt-2">National outreach and media architecture.</p>
+                    <h4 class="font-bold">Communications Lead</h4>
+                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-1">Communications & Outreach</p>
+                    <p class="text-apple-gray text-xs mt-2">Oversees awareness campaigns, media relations, and community engagement strategies for trafficking prevention.</p>
                 </div>
                 <div class="p-6 border-l-2 border-apple-blue">
-                    <h4 class="font-bold">IT Infrastructure</h4>
-                    <p class="text-apple-gray text-xs mt-2">Digital platform scaling and data security.</p>
+                    <h4 class="font-bold">Policy & Legal Advisor</h4>
+                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-1">Legal & Policy</p>
+                    <p class="text-apple-gray text-xs mt-2">Leads legislative advocacy, policy drafting, and legal compliance for NGO operations and regulatory requirements.</p>
+                </div>
+                <div class="p-6 border-l-2 border-apple-blue">
+                    <h4 class="font-bold">Technology Manager</h4>
+                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-1">Technology & Data</p>
+                    <p class="text-apple-gray text-xs mt-2">Manages digital platforms, hotline systems, cybersecurity, and impact data analytics for decision-making.</p>
+                </div>
+                <div class="p-6 border-l-2 border-apple-blue">
+                    <h4 class="font-bold">M&E Specialist</h4>
+                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-1">Monitoring & Evaluation</p>
+                    <p class="text-apple-gray text-xs mt-2">Tracks program effectiveness, conducts impact assessments, and drives evidence-based improvements across TeenX.</p>
+                </div>
+                <div class="p-6 border-l-2 border-apple-blue">
+                    <h4 class="font-bold">Training Coordinator</h4>
+                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-1">Training & Capacity Building</p>
+                    <p class="text-apple-gray text-xs mt-2">Designs and delivers Youth Envoy training, skill development programs, and leadership coaching initiatives.</p>
+                </div>
+                <div class="p-6 border-l-2 border-apple-blue">
+                    <h4 class="font-bold">Survivor Support Lead</h4>
+                    <p class="text-apple-blue text-xs font-bold uppercase tracking-widest mt-1">Survivor Support Services</p>
+                    <p class="text-apple-gray text-xs mt-2">Coordinates victim rehabilitation, counseling services, and long-term care systems for trafficking survivors.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Strategic Roadmap -->
+    <!-- ========================================
+         OUR PROGRAMS SECTION
+         ======================================== 
+         
+         Features:
+         - Four core programs
+         - Youth Protection Network
+         - Anti-Trafficking Education
+         - Community Awareness
+         - Survivor Support
+         - Call to action for programs page
+    -->
+    <section id="programs" class="py-24 bg-apple-bg">
+        <div class="container-custom">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight">How We Protect Teenagers</h2>
+                <p class="text-apple-gray text-lg max-w-2xl mx-auto mt-6">TeenX operates four integrated programs reaching vulnerable teenagers and building community protection from trafficking.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+                <!-- Program 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 group hover:border-apple-blue transition">
+                    <div class="text-3xl font-black text-apple-blue mb-4">1</div>
+                    <h3 class="text-2xl font-bold mb-4">Youth Protection Network</h3>
+                    <p class="text-apple-gray mb-6">Train 1,000+ community-based Youth Envoys (ages 16-35) as neighborhood protection coordinators with trafficking awareness and rapid response capabilities.</p>
+                    <a href="programs.html" class="text-apple-blue font-bold text-sm hover:underline">Learn more →</a>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 group hover:border-apple-blue transition">
+                    <div class="text-3xl font-black text-apple-blue mb-4">2</div>
+                    <h3 class="text-2xl font-bold mb-4">Anti-Trafficking Education</h3>
+                    <p class="text-apple-gray mb-6">Reach 100,000+ teenagers annually with school-based prevention curricula, digital safety training, and trafficking awareness education across 500+ schools.</p>
+                    <a href="programs.html" class="text-apple-blue font-bold text-sm hover:underline">Learn more →</a>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 group hover:border-apple-blue transition">
+                    <div class="text-3xl font-black text-apple-blue mb-4">3</div>
+                    <h3 class="text-2xl font-bold mb-4">Community Awareness Campaigns</h3>
+                    <p class="text-apple-gray mb-6">Launch nationwide campaigns like #Protected reaching 5+ million people through digital platforms, radio, SMS, and community events to normalize protection.</p>
+                    <a href="programs.html" class="text-apple-blue font-bold text-sm hover:underline">Learn more →</a>
+                </div>
+
+                <!-- Program 4 -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 group hover:border-apple-blue transition">
+                    <div class="text-3xl font-black text-apple-blue mb-4">4</div>
+                    <h3 class="text-2xl font-bold mb-4">Survivor Rehabilitation</h3>
+                    <p class="text-apple-gray mb-6">Provide vocational training, economic rehabilitation, psychological counseling, and family reunification to 1,200+ survivors annually with 0% re-trafficking.</p>
+                    <a href="programs.html" class="text-apple-blue font-bold text-sm hover:underline">Learn more →</a>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 reveal">
+                <a href="programs.html" class="inline-block bg-apple-blue text-white px-10 py-4 rounded-full font-bold text-sm shadow-xl shadow-blue-500/20 transition hover:scale-105">Explore All Programs →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         STRATEGIC ROADMAP SECTION
+         ======================================== 
+         
+         Features:
+         - Timeline view of TeenX's development path
+         - Key milestones from 2026 to 2030
+         - Vision 2030 strategic initiatives
+         - Staggered reveal animations
+         
+         Timeline Points:
+         1. 2026: Infrastructure Consolidation
+         2. 2027: Policy Integration
+         3. 2030: Regional Leadership Hub
+    -->
     <section id="roadmap" class="py-24 bg-white">
         <div class="container-custom">
             <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-16 reveal">Vision 2030 Roadmap</h2>
@@ -192,126 +500,117 @@
         </div>
     </section>
 
-    <!-- Governance & Transparency (Document Vault) -->
-    <section id="governance" class="py-24 bg-apple-bg">
-        <div class="container-custom">
-            <div class="flex flex-col lg:flex-row gap-16">
-                <div class="lg:w-1/3 reveal">
-                    <h2 class="text-4xl font-bold mb-6">Institutional Transparency</h2>
-                    <p class="text-apple-gray leading-relaxed mb-8">
-                        We believe in radical transparency. Every Taka spent and every policy drafted is documented and open for public review.
-                    </p>
-                    <a href="#" class="inline-flex items-center text-apple-blue font-bold text-sm tracking-wide">
-                        VIEW GOVERNANCE FRAMEWORK 
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </a>
-                </div>
-                <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal">
-                    <div class="bg-white p-6 rounded-3xl border border-gray-200 flex justify-between items-center group cursor-pointer hover:border-apple-blue transition">
-                        <div>
-                            <p class="text-[10px] font-bold text-apple-gray uppercase tracking-widest mb-1">Financial Report</p>
-                            <h5 class="font-bold">Annual Audit 2024</h5>
-                        </div>
-                        <div class="text-apple-blue opacity-0 group-hover:opacity-100 transition">PDF</div>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl border border-gray-200 flex justify-between items-center group cursor-pointer hover:border-apple-blue transition">
-                        <div>
-                            <p class="text-[10px] font-bold text-apple-gray uppercase tracking-widest mb-1">Legislative</p>
-                            <h5 class="font-bold">Constitution of TeenX</h5>
-                        </div>
-                        <div class="text-apple-blue opacity-0 group-hover:opacity-100 transition">PDF</div>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl border border-gray-200 flex justify-between items-center group cursor-pointer hover:border-apple-blue transition">
-                        <div>
-                            <p class="text-[10px] font-bold text-apple-gray uppercase tracking-widest mb-1">Impact Study</p>
-                            <h5 class="font-bold">Digital Literacy ROI</h5>
-                        </div>
-                        <div class="text-apple-blue opacity-0 group-hover:opacity-100 transition">PDF</div>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl border border-gray-200 flex justify-between items-center group cursor-pointer hover:border-apple-blue transition">
-                        <div>
-                            <p class="text-[10px] font-bold text-apple-gray uppercase tracking-widest mb-1">Strategy</p>
-                            <h5 class="font-bold">2026 Procurement Plan</h5>
-                        </div>
-                        <div class="text-apple-blue opacity-0 group-hover:opacity-100 transition">PDF</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Network Map -->
+    <!-- ========================================
+         NATIONAL NETWORK COVERAGE SECTION
+         ======================================== 
+         
+         Features:
+         - Geographic scale and reach
+         - 64-district coverage
+         - Youth Envoy network
+         - Map visualization
+    -->
     <section id="network" class="py-24 bg-white overflow-hidden">
         <div class="container-custom">
             <div class="flex flex-col md:flex-row items-center gap-16 reveal">
                 <div class="md:w-1/2">
-                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">National Digital Infrastructure</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">Operating Across All 64 Districts</h2>
+                    <p class="text-apple-gray text-lg leading-relaxed mb-8">
+                        TeenX's Youth Protection Network extends to every district in Bangladesh, establishing community-based protection systems where teenagers become neighborhood guardians against trafficking.
+                    </p>
                     <div class="space-y-6">
                         <div class="flex items-start space-x-4">
                             <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-apple-blue font-bold flex-shrink-0">64</div>
-                            <p class="text-apple-gray">District Envoys acting as local governance monitors.</p>
+                            <div>
+                                <p class="font-bold">Districts</p>
+                                <p class="text-apple-gray text-sm">Youth Envoys trained and deployed in every district of Bangladesh.</p>
+                            </div>
                         </div>
                         <div class="flex items-start space-x-4">
-                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-apple-blue font-bold flex-shrink-0">08</div>
-                            <p class="text-apple-gray">Divisional Hubs for localized resource distribution.</p>
+                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-apple-blue font-bold flex-shrink-0">1K+</div>
+                            <div>
+                                <p class="font-bold">Community Protectors</p>
+                                <p class="text-apple-gray text-sm">Trained Youth Envoys serving as neighborhood protection coordinators.</p>
+                            </div>
                         </div>
                         <div class="flex items-start space-x-4">
-                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-apple-blue font-bold flex-shrink-0">01</div>
-                            <p class="text-apple-gray">Central Secretariat in Dhaka managing global affairs.</p>
+                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-apple-blue font-bold flex-shrink-0">24/7</div>
+                            <div>
+                                <p class="font-bold">Emergency Response</p>
+                                <p class="text-apple-gray text-sm">Rapid response hotline for trafficking victims and at-risk teenagers.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="md:w-1/2 relative">
-                    <!-- Placeholder for Map Interaction -->
+                    <!-- Network Coverage Map -->
                     <div class="aspect-square bg-apple-bg rounded-full border-4 border-white shadow-2xl flex items-center justify-center overflow-hidden">
-                        <div class="text-center p-12">
-                            <svg class="w-32 h-32 mx-auto text-apple-blue/20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-                            <p class="mt-4 font-bold text-apple-gray uppercase tracking-widest text-xs">Interactive Delta Map</p>
-                        </div>
+                        <img src="assets/image/projects/bangladesh-delta-map.jpg" alt="TeenX Youth Envoy Network Coverage - All 64 Districts of Bangladesh" width="400" height="400" class="w-full h-full object-cover" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Join Section (Netlify Forms) -->
+    <!-- ========================================
+         GET INVOLVED SECTION
+         ======================================== 
+         
+         Features:
+         - Multiple ways to get involved
+         - Become a Youth Envoy
+         - Support survivors
+         - Donate
+         - Contact/volunteer
+         - Form for direct engagement
+    -->
     <section id="join" class="py-24 bg-apple-black text-white rounded-[4rem] mx-6 my-12">
         <div class="container-custom">
             <div class="max-w-3xl mx-auto text-center reveal">
-                <h2 class="text-4xl md:text-6xl font-bold mb-8">Join the National Secretariat</h2>
-                <p class="text-white/60 text-lg mb-12">We are looking for policy analysts, software engineers, and social strategists to build the future of Bangladesh.</p>
+                <h2 class="text-4xl md:text-6xl font-bold mb-8">Be Part of the Solution</h2>
+                <p class="text-white/60 text-lg mb-12">Whether you're a teenager wanting to protect your community or an adult supporting our mission, TeenX has opportunities for you to make a difference in trafficking prevention.</p>
                 
-                <form name="secretariat-application" method="POST" data-netlify="true" class="text-left space-y-6 glass-card border-white/10 p-8 rounded-[2rem]">
+                <form name="get-involved" method="POST" data-netlify="true" class="text-left space-y-6 glass-card border-white/10 p-8 rounded-[2rem]">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-[10px] font-bold uppercase tracking-widest text-white/40">Full Name</label>
-                            <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:bg-white/10 transition">
+                            <input type="text" name="name" required aria-required="true" aria-invalid="false" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:bg-white/10 transition">
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] font-bold uppercase tracking-widest text-white/40">Email Address</label>
-                            <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:bg-white/10 transition">
+                            <input type="email" name="email" required aria-required="true" aria-invalid="false" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:bg-white/10 transition">
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <label class="text-[10px] font-bold uppercase tracking-widest text-white/40">Area of Expertise</label>
-                        <select name="expertise" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white appearance-none">
-                            <option value="policy" class="bg-black">Policy & Research</option>
-                            <option value="tech" class="bg-black">Tech & Engineering</option>
-                            <option value="ops" class="bg-black">Operations & Finance</option>
-                            <option value="comm" class="bg-black">Strategic Communications</option>
+                        <label class="text-[10px] font-bold uppercase tracking-widest text-white/40">How Do You Want to Help?</label>
+                        <select name="involvement" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white appearance-none">
+                            <option value="envoy" class="bg-black">Become a Youth Envoy (Teenager)</option>
+                            <option value="volunteer" class="bg-black">Volunteer (Adult)</option>
+                            <option value="donate" class="bg-black">Support with Donations</option>
+                            <option value="partner" class="bg-black">Partner Organization</option>
+                            <option value="other" class="bg-black">Other</option>
                         </select>
                     </div>
                     <div class="space-y-2">
-                        <label class="text-[10px] font-bold uppercase tracking-widest text-white/40">Cover Note (Brief)</label>
-                        <textarea name="message" rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:bg-white/10 transition"></textarea>
+                        <label class="text-[10px] font-bold uppercase tracking-widest text-white/40">Message</label>
+                        <textarea name="message" rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:bg-white/10 transition" placeholder="Tell us about your interest..."></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-white text-apple-black font-bold py-4 rounded-xl hover:bg-opacity-90 transition">Submit Application</button>
+                    <button type="submit" class="w-full bg-white text-apple-black font-bold py-4 rounded-xl hover:bg-opacity-90 transition">Get Involved Today</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Partners (Marquee Placeholder) -->
+    <!-- ========================================
+         GLOBAL STRATEGIC AFFILIATIONS
+         ======================================== 
+         
+         Features:
+         - Display of partner organizations
+         - Grayscale styling for brand neutrality
+         - Marquee layout (horizontal scroll placeholder)
+         - Partners: UNESCO, USAID, UNICEF, World Bank, BRAC
+    -->
     <section class="py-16">
         <div class="container-custom">
             <p class="text-center text-[10px] font-bold text-apple-gray uppercase tracking-[0.4em] mb-12">Global Strategic Affiliations</p>
@@ -325,51 +624,153 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ========================================
+         FOOTER SECTION
+         ======================================== 
+         
+         Features:
+         - Brand identity and mission statement
+         - Footer navigation links
+         - Legal links (Privacy, Compliance, Terms)
+         - Copyright and social media links
+         - Four column responsive grid layout
+    -->
     <footer class="bg-white pt-24 pb-12 px-6 border-t border-gray-100">
         <div class="container-custom">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
                 <div class="md:col-span-2">
-                    <h2 class="text-2xl font-bold tracking-tighter mb-6">TEENX BANGLADESH</h2>
+                    <img src="assets/logo/teenxsvg.svg" alt="TeenX Bangladesh Logo" width="120" height="40" class="mb-6" loading="lazy">
                     <p class="text-apple-gray text-sm leading-relaxed max-w-sm">
-                        Building the institutional standards for youth-led innovation and national policy inclusion.
+                        Preventing child trafficking and teenage rape through youth-led protection networks, community awareness, and rapid survivor support across Bangladesh.
                     </p>
                 </div>
                 <div>
-                    <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6">Explore</h5>
+                    <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6">Resources</h5>
                     <ul class="text-xs text-apple-gray space-y-3 font-bold uppercase tracking-wider">
-                        <li><a href="#" class="hover:text-apple-black">Secretariat</a></li>
-                        <li><a href="#" class="hover:text-apple-black">Press Releases</a></li>
-                        <li><a href="#" class="hover:text-apple-black">Brand Assets</a></li>
+                        <li><a href="blog.html" class="hover:text-apple-black">Blog & Articles</a></li>
+                        <li><a href="press.html" class="hover:text-apple-black">Press Center</a></li>
+                        <li><a href="programs.html" class="hover:text-apple-black">Our Programs</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6">Legal</h5>
+                    <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6">Get Help</h5>
                     <ul class="text-xs text-apple-gray space-y-3 font-bold uppercase tracking-wider">
-                        <li><a href="#" class="hover:text-apple-black">Data Privacy</a></li>
-                        <li><a href="#" class="hover:text-apple-black">NGO Compliance</a></li>
-                        <li><a href="#" class="hover:text-apple-black">Terms of Use</a></li>
+                        <li><a href="#" class="hover:text-apple-black">Report Trafficking</a></li>
+                        <li><a href="#" class="hover:text-apple-black">Support Services</a></li>
+                        <li><a href="#" class="hover:text-apple-black">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center text-[9px] text-apple-gray font-bold uppercase tracking-[0.3em] pt-10 border-t border-gray-100">
-                <p>© 2026 TeenX Bangladesh. A National Youth Initiative.</p>
+                <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                    <p>© 2026 TeenX Bangladesh. A National Youth Initiative.</p>
+                    <p class="text-[8px] text-apple-gray/60">Technical Partner: <a href="https://www.neurasoft.top" rel="noopener noreferrer" target="_blank" class="hover:text-apple-blue transition">NeuraSoft</a></p>
+                </div>
                 <div class="flex space-x-8 mt-4 md:mt-0">
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Twitter</a>
+                    <a href="https://linkedin.com/company/teenx-bangladesh" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/teenxbangladesh" rel="noopener noreferrer" target="_blank">Twitter</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Scroll Reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    <!-- ========================================
+         STRUCTURED DATA (JSON-LD)
+         ======================================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TeenX Bangladesh",
+      "description": "National youth-led organization dedicated to preventing child trafficking and protecting teenagers from exploitation",
+      "url": "https://teenx.io",
+      "logo": "https://teenx.io/assets/logo/teenxsvg.svg",
+      "foundingDate": "2023-12-01",
+      "founder": {
+        "@type": "Person",
+        "name": "Shahi Al Sadat",
+        "jobTitle": "Founder & President"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dhaka",
+        "addressCountry": "Bangladesh"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/teenx-bangladesh",
+        "https://twitter.com/teenxbangladesh"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "General Support",
+        "telephone": "+880-1700-000000",
+        "email": "hello@teenx.io"
+      }
+    }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TeenX Bangladesh",
+      "image": "https://teenx.io/assets/image/teenx-og-image.jpg",
+      "description": "Youth-led NGO for trafficking prevention and teenage protection across all 64 districts of Bangladesh",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Central Secretariat, Dhaka",
+        "addressCountry": "BD"
+      },
+      "areaServed": "BD",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://teenx.io"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://teenx.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Programs",
+          "item": "https://teenx.io/programs.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Contact",
+          "item": "https://teenx.io#join"
+        }
+      ]
+    }
+    </script>
+
+    <!-- ========================================
+         EXTERNAL JAVASCRIPT
+         ======================================== 
+         
+         Loaded Scripts (in order):
+         1. js/script.js - Core functionality
+            - Scroll reveal animation system
+            - IntersectionObserver for viewport detection
+            
+         Location: js/script.js
+         Dependencies: None (vanilla JavaScript)
+    -->
+    <script defer src="js/script.js"></script>
 </body>
 </html>

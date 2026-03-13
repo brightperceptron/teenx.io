@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TeenX Bangladesh Blog - Articles on child trafficking prevention, teenage safety, youth protection, and survivor support across Bangladesh.">
+    <meta name="keywords" content="trafficking prevention blog, teenage safety, youth protection, child safety articles, Bangladesh NGO blog">
+    <meta name="author" content="TeenX Bangladesh">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#0066cc">
+    <link rel="canonical" href="https://teenx.io/blog.html">
+    <link rel="icon" href="assets/logo/teenxsvg.svg" type="image/svg+xml">
+    <link rel="alternate" hreflang="en" href="https://teenx.io/blog.html" />
+    <link rel="alternate" hreflang="bn" href="https://teenx.io/bn/blog.html" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://teenx.io/blog.html" />
+    <meta property="og:title" content="TeenX Blog - Trafficking Prevention & Youth Protection Insights" />
+    <meta property="og:description" content="Expert articles on child trafficking prevention, digital safety, survivor support, and community protection strategies." />
+    <meta property="og:image" content="https://teenx.io/assets/image/teenx-blog-og.jpg" />
+    <meta property="og:site_name" content="TeenX Bangladesh" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TeenX Bangladesh Blog" />
+    <meta name="twitter:description" content="Resources and insights on preventing child trafficking and protecting teenagers" />
+    <meta name="twitter:image" content="https://teenx.io/assets/image/teenx-blog-og.jpg" />
+    
+    <title>TeenX Blog - Trafficking Prevention & Youth Protection</title>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KGPCNHNL');</script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        apple: {
+                            black: '#1d1d1f',
+                            bg: '#f5f5f7',
+                            blue: '#0066cc',
+                            gray: '#86868b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body x-data="{ mobileMenu: false }" :class="mobileMenu ? 'overflow-hidden' : ''">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGPCNHNL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-[110] apple-glass border-b border-gray-200/40">
+        <div class="container-custom h-[52px] flex justify-between items-center text-[11px] font-bold uppercase tracking-wider">
+            <div class="flex items-center space-x-10">
+                <a href="index.html" class="text-xl font-extrabold tracking-tighter normal-case">
+                    <img src="assets/logo/teenxsvg.svg" alt="TeenX Bangladesh Logo" width="120" height="40" loading="eager">
+                </a>
+                <div class="hidden lg:flex space-x-8 text-apple-black/60">
+                    <a href="index.html" class="hover:text-apple-black transition">Home</a>
+                    <a href="blog.html" class="text-apple-blue transition font-bold">Blog</a>
+                    <a href="programs.html" class="hover:text-apple-black transition">Programs</a>
+                    <a href="press.html" class="hover:text-apple-black transition">Press</a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="index.html#join" class="hidden sm:inline-block bg-apple-black text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition text-xs">Apply for Membership</a>
+                <button @click="mobileMenu = !mobileMenu" class="lg:hidden relative w-8 h-8 flex flex-col justify-center items-center">
+                    <span class="block w-6 h-0.5 bg-apple-black transition-all" :class="mobileMenu ? 'rotate-45 translate-y-1' : '-translate-y-1'"></span>
+                    <span class="block w-6 h-0.5 bg-apple-black transition-all" :class="mobileMenu ? '-rotate-45 -translate-y-0' : 'translate-y-1'"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenu" x-cloak class="lg:hidden fixed inset-0 top-[52px] apple-glass z-[100] px-8 py-10 flex flex-col h-screen overflow-y-auto">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Home</a>
+                <a href="blog.html" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5 text-apple-blue">Blog</a>
+                <a href="programs.html" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Programs</a>
+                <a href="press.html" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Press</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-40 pb-20 md:pt-56 md:pb-32 px-6">
+        <div class="container-custom text-center reveal active">
+            <span class="text-apple-blue font-bold text-xs uppercase tracking-[0.3em] mb-6 block">Insights & Resources</span>
+            <h1 class="hero-text text-[40px] sm:text-7xl md:text-[90px] font-bold mb-8">TeenX <br> <span class="text-apple-blue">Blog.</span></h1>
+            <p class="text-lg md:text-2xl text-apple-gray max-w-3xl mx-auto font-medium mb-12">
+                Expert insights on trafficking prevention, teenage safety, community protection, and survivor support.
+            </p>
+        </div>
+    </header>
+
+    <!-- Featured Article -->
+    <section class="py-12 px-6 bg-apple-bg">
+        <div class="container-custom">
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-lg hover:shadow-xl transition">
+                <img src="assets/image/projects/featured-article.jpg" alt="TeenX Featured Article" width="1200" height="600" class="w-full h-80 object-cover" loading="lazy">
+                <div class="p-8 md:p-12">
+                    <span class="text-apple-blue text-xs font-bold uppercase tracking-widest">Featured</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">The Complete Guide to Child Trafficking Warning Signs Every Parent Should Know</h2>
+                    <p class="text-apple-gray text-lg leading-relaxed mb-8">
+                        Learn to identify behavioral, physical, and relational warning signs of trafficking. This comprehensive guide helps parents, teachers, and community members recognize when a teenager is at risk.
+                    </p>
+                    <a href="#" class="inline-block bg-apple-blue text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-opacity-90 transition">Read Article →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Article Grid -->
+    <section class="py-24 px-6">
+        <div class="container-custom">
+            <h2 class="text-4xl font-bold mb-16">Latest Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article Card 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-apple-blue hover:shadow-lg transition group">
+                    <img src="assets/image/projects/digital-grooming.jpg" alt="Digital Grooming Article" width="400" height="250" class="w-full h-56 object-cover group-hover:scale-105 transition" loading="lazy">
+                    <div class="p-6">
+                        <span class="text-apple-blue text-xs font-bold uppercase tracking-widest">Digital Safety</span>
+                        <h3 class="text-xl font-bold mt-3 mb-4">Digital Grooming: How Traffickers Exploit Teenagers Online</h3>
+                        <p class="text-apple-gray text-sm mb-6">Understanding the five phases of online grooming and how to identify warning signs on social media.</p>
+                        <a href="#" class="text-apple-blue font-bold text-sm hover:underline">Read →</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-apple-blue hover:shadow-lg transition group">
+                    <img src="assets/image/projects/survivor-recovery.jpg" alt="Survivor Recovery Article" width="400" height="250" class="w-full h-56 object-cover group-hover:scale-105 transition" loading="lazy">
+                    <div class="p-6">
+                        <span class="text-apple-blue text-xs font-bold uppercase tracking-widest">Support</span>
+                        <h3 class="text-xl font-bold mt-3 mb-4">Economic Rehabilitation for Trafficking Survivors</h3>
+                        <p class="text-apple-gray text-sm mb-6">How vocational training and income generation prevent re-trafficking and enable long-term recovery.</p>
+                        <a href="#" class="text-apple-blue font-bold text-sm hover:underline">Read →</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-apple-blue hover:shadow-lg transition group">
+                    <img src="assets/image/projects/community-protection.jpg" alt="Community Protection Article" width="400" height="250" class="w-full h-56 object-cover group-hover:scale-105 transition" loading="lazy">
+                    <div class="p-6">
+                        <span class="text-apple-blue text-xs font-bold uppercase tracking-widest">Community</span>
+                        <h3 class="text-xl font-bold mt-3 mb-4">Community-Based Trafficking Prevention Models</h3>
+                        <p class="text-apple-gray text-sm mb-6">Why youth-led local networks are more effective than top-down institutional approaches.</p>
+                        <a href="#" class="text-apple-blue font-bold text-sm hover:underline">Read →</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 4 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-apple-blue hover:shadow-lg transition group">
+                    <img src="assets/image/projects/school-safety.jpg" alt="School Safety Article" width="400" height="250" class="w-full h-56 object-cover group-hover:scale-105 transition" loading="lazy">
+                    <div class="p-6">
+                        <span class="text-apple-blue text-xs font-bold uppercase tracking-widest">Education</span>
+                        <h3 class="text-xl font-bold mt-3 mb-4">School-Based Prevention: Curriculum Integration</h3>
+                        <p class="text-apple-gray text-sm mb-6">Implementing trafficking prevention education in Bangladesh schools to protect 20+ million students.</p>
+                        <a href="#" class="text-apple-blue font-bold text-sm hover:underline">Read →</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 5 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-apple-blue hover:shadow-lg transition group">
+                    <img src="assets/image/projects/youth-leadership.jpg" alt="Youth Leadership Article" width="400" height="250" class="w-full h-56 object-cover group-hover:scale-105 transition" loading="lazy">
+                    <div class="p-6">
+                        <span class="text-apple-blue text-xs font-bold uppercase tracking-widest">Leadership</span>
+                        <h3 class="text-xl font-bold mt-3 mb-4">Youth Leadership in Prevention: Empowering Teenagers</h3>
+                        <p class="text-apple-gray text-sm mb-6">How TeenX empowers teenagers as community protection leaders through training and mentorship.</p>
+                        <a href="#" class="text-apple-blue font-bold text-sm hover:underline">Read →</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 6 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-apple-blue hover:shadow-lg transition group">
+                    <img src="assets/image/projects/faith-communities.jpg" alt="Faith Communities Article" width="400" height="250" class="w-full h-56 object-cover group-hover:scale-105 transition" loading="lazy">
+                    <div class="p-6">
+                        <span class="text-apple-blue text-xs font-bold uppercase tracking-widest">Community</span>
+                        <h3 class="text-xl font-bold mt-3 mb-4">Faith Communities in Prevention: Religious Leadership</h3>
+                        <p class="text-apple-gray text-sm mb-6">Mobilizing mosques, temples, and churches as protection centers for vulnerable youth.</p>
+                        <a href="#" class="text-apple-blue font-bold text-sm hover:underline">Read →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-24 px-6 bg-apple-black text-white">
+        <div class="container-custom max-w-2xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6">Stay Informed</h2>
+            <p class="text-white/60 text-lg mb-12">Get monthly insights on trafficking prevention and youth protection delivered to your inbox.</p>
+            <form class="flex flex-col sm:flex-row gap-4" name="newsletter-signup" method="POST" data-netlify="true">
+                <input type="email" name="email" placeholder="Enter your email address" required aria-required="true" aria-invalid="false" class="flex-grow bg-white/10 border border-white/20 rounded-lg px-6 py-3 text-white placeholder-white/50 focus:bg-white/20 transition" />
+                <button type="submit" class="bg-apple-blue text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition whitespace-nowrap">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-24 pb-12 px-6 border-t border-gray-100">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+                <div class="md:col-span-2">
+                    <img src="assets/logo/teenxsvg.svg" alt="TeenX Bangladesh Logo" width="120" height="40" class="mb-6" loading="lazy">
+                    <p class="text-apple-gray text-sm leading-relaxed max-w-sm">
+                        Building the institutional standards for youth-led innovation and national policy inclusion. Preventing trafficking. Protecting teenagers.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6">Resources</h5>
+                    <ul class="text-xs text-apple-gray space-y-3 font-bold uppercase tracking-wider">
+                        <li><a href="index.html" class="hover:text-apple-black">Home</a></li>
+                        <li><a href="programs.html" class="hover:text-apple-black">Programs</a></li>
+                        <li><a href="press.html" class="hover:text-apple-black">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6">Legal</h5>
+                    <ul class="text-xs text-apple-gray space-y-3 font-bold uppercase tracking-wider">
+                        <li><a href="#" class="hover:text-apple-black">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-apple-black">Terms of Use</a></li>
+                        <li><a href="#" class="hover:text-apple-black">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-[9px] text-apple-gray font-bold uppercase tracking-[0.3em] pt-10 border-t border-gray-100">
+                <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                    <p>© 2026 TeenX Bangladesh. A National Youth Initiative.</p>
+                    <p class="text-[8px] text-apple-gray/60">Technical Partner: <a href="https://www.neurasoft.top" rel="noopener noreferrer" target="_blank" class="hover:text-apple-blue transition">NeuraSoft</a></p>
+                </div>
+                <div class="flex space-x-8 mt-4 md:mt-0">
+                    <a href="https://linkedin.com/company/teenx-bangladesh" rel="noopener noreferrer" target="_blank" class="hover:text-apple-black">LinkedIn</a>
+                    <a href="https://twitter.com/teenxbangladesh" rel="noopener noreferrer" target="_blank" class="hover:text-apple-black">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Structured Data for Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "TeenX Blog",
+      "description": "Articles on child trafficking prevention, teenage safety, and community protection",
+      "url": "https://teenx.io/blog.html",
+      "mainEntity": {
+        "@type": "Blog",
+        "name": "TeenX Resource Hub"
+      }
+    }
+    </script>
+
+    <script defer src="js/script.js"></script>
+</body>
+</html>

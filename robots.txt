@@ -1,0 +1,39 @@
+# ===============================================================
+# TEENX - ROBOTS.TXT
+# Search Engine Crawling Instructions
+# ===============================================================
+# Purpose: Guide search engine crawlers on which pages to index
+# Install Location: https://teenx.io/robots.txt
+# ===============================================================
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /?utm_
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /search/
+
+# Specific bot permissions
+User-agent: Googlebot
+Crawl-delay: 0
+Allow: /
+
+User-agent: Bingbot
+Crawl-delay: 1
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Reference sitemap
+Sitemap: https://teenx.io/sitemap.xml
+Sitemap: https://teenx.io/sitemap-blog.xml
+Sitemap: https://teenx.io/sitemap-pages.xml
+
+# Comment: Updated March 2026
+# Contains restrictions on private pages, temporary pages, and URL parameters
+# Allows full access to public content for Google, Bing, Baidu
+# ===============================================================
