@@ -3,6 +3,9 @@
  * TeenX Bangladesh - Main JavaScript
  * ========================================
  * 
+ * Copyright © 2026 NeuraSoft
+ * Developer Contact: neurasoftware@gmail.com
+ * 
  * Author: TeenX Development Team
  * Date: 2026
  * Description: Core JavaScript functionality for TeenX Bangladesh website
