@@ -56,7 +56,7 @@
     <meta property="og:url" content="https://teenx.io/achievements.html" />
     <meta property="og:title" content="TeenX Achievements & Recognition" />
     <meta property="og:description" content="Explore TeenX's awards, milestones, and recognition in trafficking prevention and youth empowerment." />
-    <meta property="og:image" content="https://teenx.io/assets/image/teenx-og-image.jpg" />
+    <meta property="og:image" content="https://teenx.io/assets/image/achievements/south-asian-excellence-award-2025.jpeg" />
     <meta property="og:site_name" content="TeenX Bangladesh" />
     <meta property="og:locale" content="en_US" />
 
@@ -64,7 +64,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="TeenX Achievements & Recognition" />
     <meta name="twitter:description" content="Award-winning NGO for trafficking prevention in Bangladesh" />
-    <meta name="twitter:image" content="https://teenx.io/assets/image/teenx-og-image.jpg" />
+    <meta name="twitter:image" content="https://teenx.io/assets/image/achievements/south-asian-excellence-award-2025.jpeg" />
 
     <!-- Alternative Language Links -->
     <link rel="alternate" hreflang="en" href="https://teenx.io/achievements.html" />
@@ -124,7 +124,7 @@
                 </div>
             </div>
             <div class="flex items-center space-x-6">
-                <a href="index.html#join" class="hidden sm:inline-block bg-apple-black text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition text-xs">Apply for Membership</a>
+                <a href="membership.html" class="hidden sm:inline-block bg-apple-black text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition text-xs">Apply for Membership</a>
                 <button @click="mobileMenu = !mobileMenu" class="lg:hidden relative w-8 h-8 flex flex-col justify-center items-center">
                     <span class="block w-6 h-0.5 bg-apple-black transition-all" :class="mobileMenu ? 'rotate-45 translate-y-1' : '-translate-y-1'"></span>
                     <span class="block w-6 h-0.5 bg-apple-black transition-all" :class="mobileMenu ? '-rotate-45 -translate-y-0' : 'translate-y-1'"></span>
@@ -159,46 +159,91 @@
     <!-- Major Awards & Recognition Section -->
     <section id="awards" class="py-24 bg-white">
         <div class="container-custom">
-            <div class="text-center mb-16 reveal">
+            <div class="max-w-3xl mb-14 reveal">
+                <span class="text-apple-blue font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Award Moments</span>
                 <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Awards & Recognition</h2>
-                <p class="text-apple-gray text-lg max-w-2xl mx-auto mt-6">National and international recognition for our impact</p>
+                <p class="text-apple-gray text-lg mt-6">Image-led recognition highlights from TeenX award platforms. Click any photo to view it full screen with details.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
-                <!-- Award 1 -->
-                <div class="bg-apple-bg p-8 rounded-3xl border border-gray-200">
-                    <div class="text-4xl mb-4">🏆</div>
-                    <h3 class="text-2xl font-bold mb-3">Best Youth-Led NGO Award 2025</h3>
-                    <p class="text-apple-gray mb-4 expandable-text">Awarded by Bangladesh NGO Forum for innovative youth-centric approach to trafficking prevention and community protection.</p>
-                    <p class="text-sm text-apple-blue font-semibold">Bangladesh NGO Forum</p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+                <article class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
+                    <button type="button" onclick="openAchievementZoom('assets/image/achievements/south-asian-excellence-award-2025.jpeg', 'South Asian Excellence Award 2025', 'Recognized for regional youth leadership and community-driven protection work.', 'South Asian Excellence Award')" class="block w-full text-left group">
+                        <img src="assets/image/achievements/south-asian-excellence-award-2025.jpeg" alt="TeenX receiving South Asian Excellence Award 2025" width="1103" height="821" loading="eager" class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-[1.02]">
+                        <div class="p-5">
+                            <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-apple-blue mb-2">Click to zoom</p>
+                            <h3 class="text-lg font-bold text-apple-black">South Asian Excellence Award 2025</h3>
+                        </div>
+                    </button>
+                </article>
 
-                <!-- Award 2 -->
-                <div class="bg-apple-bg p-8 rounded-3xl border border-gray-200">
-                    <div class="text-4xl mb-4">🌟</div>
-                    <h3 class="text-2xl font-bold mb-3">Social Impact Leadership Award 2025</h3>
-                    <p class="text-apple-gray mb-4 expandable-text">Recognized for outstanding contribution to survivor rehabilitation and reintegration programs with 99% survival outcomes.</p>
-                    <p class="text-sm text-apple-blue font-semibold">Asia-Pacific Development Institute</p>
-                </div>
+                <article class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
+                    <button type="button" onclick="openAchievementZoom('assets/image/achievements/star-bangladesh-award-2025.jpeg', 'Star Bangladesh Award 2025', 'Presented for youth development, civic participation, and community leadership.', 'Star Bangladesh Award')" class="block w-full text-left group">
+                        <img src="assets/image/achievements/star-bangladesh-award-2025.jpeg" alt="TeenX receiving Star Bangladesh Award 2025" width="1600" height="1066" loading="lazy" class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-[1.02]">
+                        <div class="p-5">
+                            <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-apple-blue mb-2">Click to zoom</p>
+                            <h3 class="text-lg font-bold text-apple-black">Star Bangladesh Award 2025</h3>
+                        </div>
+                    </button>
+                </article>
 
-                <!-- Award 3 -->
-                <div class="bg-apple-bg p-8 rounded-3xl border border-gray-200">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-2xl font-bold mb-3">SDG Achievement Excellence 2024</h3>
-                    <p class="text-apple-gray mb-4 expandable-text">Acknowledged for contribution to Sustainable Development Goal 5 (Gender Equality) and Goal 8 (Decent Work & Economic Growth).</p>
-                    <p class="text-sm text-apple-blue font-semibold">UN Sustainable Development Programme</p>
-                </div>
+                <article class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
+                    <button type="button" onclick="openAchievementZoom('assets/image/achievements/international-digital-business-award-2025.jpeg', 'International Digital Business Award 2025', 'Awarded for using digital platforms to advance youth-led safety awareness.', 'International Digital Business Award')" class="block w-full text-left group">
+                        <img src="assets/image/achievements/international-digital-business-award-2025.jpeg" alt="TeenX receiving International Digital Business Award 2025" width="1080" height="977" loading="lazy" class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-[1.02]">
+                        <div class="p-5">
+                            <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-apple-blue mb-2">Click to zoom</p>
+                            <h3 class="text-lg font-bold text-apple-black">International Digital Business Award 2025</h3>
+                        </div>
+                    </button>
+                </article>
 
-                <!-- Award 4 -->
-                <div class="bg-apple-bg p-8 rounded-3xl border border-gray-200">
-                    <div class="text-4xl mb-4">💡</div>
-                    <h3 class="text-2xl font-bold mb-3">Innovation in Community Protection 2024</h3>
-                    <p class="text-apple-gray mb-4 expandable-text">Featured for developing the Youth Envoy model as a scalable, community-based protection framework across 64 districts.</p>
-                    <p class="text-sm text-apple-blue font-semibold">Global Youth Forum</p>
-                </div>
+                <article class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
+                    <button type="button" onclick="openAchievementZoom('assets/image/achievements/media-award-recognition-2024.jpeg', 'Media Award Recognition 2024', 'Recognition for public communication and positive youth change initiatives.', 'Media Award Platform')" class="block w-full text-left group">
+                        <img src="assets/image/achievements/media-award-recognition-2024.jpeg" alt="TeenX receiving media award recognition in 2024" width="1600" height="800" loading="lazy" class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-[1.02]">
+                        <div class="p-5">
+                            <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-apple-blue mb-2">Click to zoom</p>
+                            <h3 class="text-lg font-bold text-apple-black">Media Award Recognition 2024</h3>
+                        </div>
+                    </button>
+                </article>
+
+                <article class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
+                    <button type="button" onclick="openAchievementZoom('assets/image/achievements/business-summit-award-2025.jpeg', 'Business Summit Award 2025', 'Honored by business and civic leaders for measurable youth impact.', 'Business Summit Award')" class="block w-full text-left group">
+                        <img src="assets/image/achievements/business-summit-award-2025.jpeg" alt="TeenX receiving Business Summit Award 2025" width="1600" height="1066" loading="lazy" class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-[1.02]">
+                        <div class="p-5">
+                            <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-apple-blue mb-2">Click to zoom</p>
+                            <h3 class="text-lg font-bold text-apple-black">Business Summit Award 2025</h3>
+                        </div>
+                    </button>
+                </article>
+
+                <article class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
+                    <button type="button" onclick="openAchievementZoom('assets/image/achievements/international-tech-awards-2024.jpeg', 'International Tech Awards 2024', 'Recognized for technology-enabled awareness, coordination, and youth engagement.', 'International Tech Awards')" class="block w-full text-left group">
+                        <img src="assets/image/achievements/international-tech-awards-2024.jpeg" alt="TeenX receiving International Tech Awards 2024 certificate" width="1080" height="987" loading="lazy" class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-[1.02]">
+                        <div class="p-5">
+                            <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-apple-blue mb-2">Click to zoom</p>
+                            <h3 class="text-lg font-bold text-apple-black">International Tech Awards 2024</h3>
+                        </div>
+                    </button>
+                </article>
             </div>
         </div>
     </section>
+
+    <div id="achievementZoomModal" class="fixed inset-0 z-[200] hidden bg-black/90 backdrop-blur-sm px-4 py-6 md:p-10">
+        <button type="button" onclick="closeAchievementZoom()" aria-label="Close image preview" class="absolute top-5 right-5 z-10 h-11 w-11 rounded-full bg-white/10 text-white border border-white/20 hover:bg-white/20 transition text-2xl leading-none">×</button>
+        <button type="button" onclick="closeAchievementZoom()" aria-label="Close preview backdrop" class="absolute inset-0 cursor-zoom-out"></button>
+        <div class="relative z-10 h-full max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-[minmax(0,1fr)_360px] gap-5 items-center">
+            <div class="w-full h-[62vh] lg:h-full flex items-center justify-center">
+                <img id="achievementZoomImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl">
+            </div>
+            <aside class="w-full bg-white text-apple-black rounded-3xl p-6 shadow-2xl">
+                <p id="achievementZoomSource" class="text-[10px] font-bold uppercase tracking-[0.25em] text-apple-blue mb-3"></p>
+                <h3 id="achievementZoomTitle" class="text-2xl font-bold leading-tight"></h3>
+                <p id="achievementZoomDetails" class="text-sm text-apple-gray leading-relaxed mt-4"></p>
+                <button type="button" onclick="closeAchievementZoom()" class="mt-6 w-full bg-apple-black text-white font-bold py-3 rounded-full hover:bg-opacity-90 transition">Close Preview</button>
+            </aside>
+        </div>
+    </div>
 
     <!-- Key Milestones Section -->
     <section id="milestones" class="py-24 bg-apple-bg">
@@ -212,7 +257,7 @@
                     </div>
                     <div class="flex-grow pb-12 border-b border-gray-200">
                         <h4 class="text-2xl font-bold mb-4">TeenX Founded</h4>
-                        <p class="text-apple-gray max-w-2xl expandable-text">Shahi Al Sadat founds TeenX with vision to empower youth as trafficking prevention agents.</p>
+                        <p class="text-apple-gray max-w-2xl expandable-text">TeenX begins with a vision to empower young people as trafficking prevention agents.</p>
                     </div>
                 </div>
 
@@ -329,7 +374,7 @@
                 <p class="text-white/60 text-lg max-w-2xl mx-auto mb-12">
                     Join TeenX as a Youth Envoy, volunteer, or supporter. Together, we're creating lasting change in trafficking prevention.
                 </p>
-                <a href="index.html#join" class="inline-block bg-white text-apple-black font-bold px-10 py-4 rounded-full hover:bg-opacity-90 transition">Get Involved Today →</a>
+                <a href="membership.html" class="inline-block bg-white text-apple-black font-bold px-10 py-4 rounded-full hover:bg-opacity-90 transition">Get Involved Today →</a>
             </div>
         </div>
     </section>
@@ -374,7 +419,7 @@
                     <ul class="space-y-3">
                         <li><a href="#" class="text-apple-gray hover:text-apple-blue font-medium text-xs transition">Report Trafficking</a></li>
                         <li><a href="#" class="text-apple-gray hover:text-apple-blue font-medium text-xs transition">Get Help</a></li>
-                        <li><a href="index.html#join" class="text-apple-gray hover:text-apple-blue font-medium text-xs transition">Get Involved</a></li>
+                        <li><a href="membership.html" class="text-apple-gray hover:text-apple-blue font-medium text-xs transition">Get Involved</a></li>
                     </ul>
                 </div>
             </div>
@@ -417,6 +462,31 @@
     }
     </script>
 
+    <script>
+        function openAchievementZoom(src, title, details, source) {
+            const modal = document.getElementById('achievementZoomModal');
+            const image = document.getElementById('achievementZoomImage');
+            document.getElementById('achievementZoomTitle').innerText = title;
+            document.getElementById('achievementZoomDetails').innerText = details;
+            document.getElementById('achievementZoomSource').innerText = source;
+            image.src = src;
+            image.alt = title;
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeAchievementZoom() {
+            const modal = document.getElementById('achievementZoomModal');
+            const image = document.getElementById('achievementZoomImage');
+            modal.classList.add('hidden');
+            image.src = '';
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeAchievementZoom();
+        });
+    </script>
     <script defer src="js/script.js"></script>
 </body>
 </html>

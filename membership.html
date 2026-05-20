@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for TeenX Bangladesh membership. Join the national youth protection network and submit payment verification securely.">
+    <link rel="canonical" href="https://teenx.io/membership.html">
+    <link rel="icon" href="assets/logo/teenxsvg.svg" type="image/svg+xml">
+    <title>Apply for Membership - TeenX Bangladesh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        apple: {
+                            black: '#1d1d1f',
+                            bg: '#f5f5f7',
+                            blue: '#0066cc',
+                            gray: '#86868b'
+                        },
+                        brand: {
+                            50: '#f5f7ff',
+                            100: '#ebf0ff',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a'
+                        },
+                        success: {
+                            50: '#ecfdf5',
+                            500: '#10b981',
+                            600: '#059669'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .step-pane { transition: opacity .25s ease-out, transform .25s ease-out; }
+        .input-validated { border-color: #10b981 !important; background-color: #f0fdf4 !important; }
+        .input-error { border-color: #f43f5e !important; background-color: #fff1f2 !important; animation: shake .3s ease-in-out; }
+        @keyframes shake {
+            0%,100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            75% { transform: translateX(4px); }
+        }
+        .reward-particle {
+            position: absolute;
+            pointer-events: none;
+            z-index: 999;
+            border-radius: 9999px;
+            transform: translate(-50%, -50%);
+            animation: burst .6s cubic-bezier(.1,.8,.3,1) forwards;
+        }
+        @keyframes burst {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+            100% {
+                transform: translate(calc(-50% + var(--x-move)), calc(-50% + var(--y-move))) scale(1);
+                opacity: 0;
+            }
+        }
+        .compact-scroll::-webkit-scrollbar { width: 5px; }
+        .compact-scroll::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 9999px; }
+        .compact-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+        button:focus-visible, input:focus-visible, label:focus-visible, textarea:focus-visible {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body x-data="{ mobileMenu: false }" :class="mobileMenu ? 'overflow-hidden' : ''" class="bg-slate-50 text-slate-800 font-sans min-h-screen overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-[110] apple-glass border-b border-gray-200/40">
+        <div class="container-custom h-[52px] flex justify-between items-center text-[11px] font-bold uppercase tracking-wider">
+            <div class="flex items-center space-x-10">
+                <a href="index.html" class="text-xl font-extrabold tracking-tighter normal-case">
+                    <img src="assets/logo/teenxsvg.svg" alt="TeenX Bangladesh Logo" width="140" height="48" loading="eager" class="drop-shadow-md hover:drop-shadow-lg transition-all">
+                </a>
+                <div class="hidden lg:flex space-x-8 text-apple-black/60">
+                    <a href="index.html#structure" class="hover:text-apple-black transition">Structure</a>
+                    <a href="index.html#roadmap" class="hover:text-apple-black transition">Roadmap</a>
+                    <a href="index.html#network" class="hover:text-apple-black transition">Network</a>
+                    <a href="achievements.html" class="hover:text-apple-black transition">Achievements</a>
+                    <a href="blog.html" class="hover:text-apple-black transition">Blog</a>
+                    <a href="programs.html" class="hover:text-apple-black transition">Programs</a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="index.html#join" class="hidden sm:inline-block bg-apple-black text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition">Contact</a>
+                <button type="button" @click="mobileMenu = !mobileMenu" class="lg:hidden relative w-8 h-8 flex flex-col justify-center items-center">
+                    <span class="block w-6 h-0.5 bg-apple-black transition-all" :class="mobileMenu ? 'rotate-45 translate-y-1' : '-translate-y-1'"></span>
+                    <span class="block w-6 h-0.5 bg-apple-black transition-all" :class="mobileMenu ? '-rotate-45 -translate-y-0' : 'translate-y-1'"></span>
+                </button>
+            </div>
+        </div>
+        <div x-show="mobileMenu" x-cloak class="lg:hidden fixed inset-0 top-[52px] apple-glass z-[100] px-8 py-10 flex flex-col h-screen overflow-y-auto">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html#structure" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Structure</a>
+                <a href="index.html#roadmap" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Roadmap</a>
+                <a href="index.html#network" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Network</a>
+                <a href="achievements.html" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Achievements</a>
+                <a href="blog.html" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Blog</a>
+                <a href="programs.html" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Programs</a>
+                <a href="index.html#join" @click="mobileMenu = false" class="py-4 text-3xl font-bold border-b border-black/5">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-[52px] relative">
+        <div class="absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full bg-blue-50/70 blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-20 right-10 w-[400px] h-[400px] rounded-full bg-indigo-50/60 blur-[120px] pointer-events-none"></div>
+
+        <section class="w-full max-w-xl mx-auto px-4 py-12 md:py-16 min-h-[calc(100vh-52px)] flex items-center justify-center relative z-10">
+            <form name="teenx-membership" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" id="registrationForm" class="w-full">
+                <input type="hidden" name="form-name" value="teenx-membership">
+                <p class="hidden"><label>Do not fill this out: <input name="bot-field"></label></p>
+                <input type="hidden" name="selected_interests" id="hiddenInterests">
+                <input type="hidden" name="selected_membership" id="hiddenMembership">
+                <input type="hidden" name="membership_fee" id="hiddenFee">
+                <input type="hidden" name="recommended_membership" id="hiddenRecommendedMembership">
+
+                <div id="statusPanel" class="hidden mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span id="encouragementLabel" class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Ready</span>
+                        <span id="percentText" class="text-xs font-bold text-brand-600">0%</span>
+                    </div>
+                    <div class="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
+                        <div id="progressBar" class="h-full bg-gradient-to-r from-brand-600 to-success-500 transition-all duration-500" style="width:0%"></div>
+                    </div>
+                </div>
+
+                <div id="step-1" class="step-pane text-center space-y-6">
+                    <div class="space-y-3">
+                        <span class="inline-flex items-center gap-1 py-1 px-3 rounded-full text-[11px] font-bold bg-brand-50 border border-brand-100 text-brand-600">TeenX Membership</span>
+                        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-apple-black">Claim Your Space in Bangladesh's Youth Protection Network</h1>
+                        <p class="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">Join TeenX to access national leadership projects, certified roles, mentorship, and a 64-district youth protection network.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 max-w-sm mx-auto">
+                        <div class="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm">
+                            <div class="font-bold text-sm">National</div>
+                            <div class="text-[10px] text-slate-400 uppercase">Recognition</div>
+                        </div>
+                        <div class="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm">
+                            <div class="font-bold text-sm">Curated</div>
+                            <div class="text-[10px] text-slate-400 uppercase">Mentorship</div>
+                        </div>
+                        <div class="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm">
+                            <div class="font-bold text-sm">64-Dist</div>
+                            <div class="text-[10px] text-slate-400 uppercase">Network</div>
+                        </div>
+                    </div>
+                    <button type="button" onclick="goToStep(2, event)" class="w-full max-w-xs mx-auto py-3.5 rounded-full bg-apple-black hover:bg-opacity-90 text-white text-sm font-bold transition-all">Start Registration</button>
+                </div>
+
+                <div id="step-2" class="step-pane hidden opacity-0 scale-[0.98] space-y-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-brand-600 font-bold">Step 1 of 5</span>
+                        <h2 class="text-2xl font-bold tracking-tight text-apple-black">Tell us about yourself</h2>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-3xl p-5 space-y-4 shadow-sm">
+                        <div>
+                            <label class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Full Name *</label>
+                            <input required type="text" name="full_name" id="fullName" autocomplete="name" placeholder="e.g. Ayesha Rahman" class="w-full mt-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none transition-all focus:border-brand-600">
+                            <p id="err_fullName" class="hidden text-xs text-rose-500 mt-1">Enter a valid full name.</p>
+                        </div>
+                        <div>
+                            <label class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Mobile Number *</label>
+                            <input required type="tel" name="mobile_number" id="mobileNumber" inputmode="numeric" autocomplete="tel" placeholder="017XXXXXXXX" class="w-full mt-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none transition-all focus:border-brand-600">
+                            <p id="err_mobileNumber" class="hidden text-xs text-rose-500 mt-1">Enter a valid Bangladesh mobile number.</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">District *</label>
+                                <input required type="text" name="district" id="district" placeholder="e.g. Dhaka" class="w-full mt-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none transition-all focus:border-brand-600">
+                                <p id="err_district" class="hidden text-xs text-rose-500 mt-1">Enter your district.</p>
+                            </div>
+                            <div>
+                                <label class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Institution</label>
+                                <input type="text" name="institution" id="institution" placeholder="e.g. Notre Dame College" class="w-full mt-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none transition-all focus:border-brand-600">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" onclick="goToStep(1)" class="px-4 py-2 rounded-lg text-sm text-slate-500 hover:bg-slate-100 transition-all">Back</button>
+                        <button type="button" onclick="validateStep2()" class="px-6 py-2 rounded-full bg-apple-black hover:bg-opacity-90 text-white text-sm font-bold transition-all shadow-sm active:scale-95">Continue</button>
+                    </div>
+                </div>
+
+                <div id="step-3" class="step-pane hidden opacity-0 scale-[0.98] space-y-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-brand-600 font-bold">Step 2 of 5</span>
+                        <h2 class="text-2xl font-bold text-apple-black">What are your interests?</h2>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+                        <div id="interestsGrid" class="grid grid-cols-2 gap-2"></div>
+                        <p id="err_interests" class="hidden text-xs text-rose-500 mt-3">Select at least one interest.</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" onclick="goToStep(2)" class="px-4 py-2 rounded-lg text-sm text-slate-500 hover:bg-slate-100 transition-all">Back</button>
+                        <button type="button" onclick="validateStep3()" class="px-6 py-2 rounded-full bg-apple-black hover:bg-opacity-90 text-white text-sm font-bold transition-all shadow-sm active:scale-95">Continue</button>
+                    </div>
+                </div>
+
+                <div id="step-4" class="step-pane hidden opacity-0 scale-[0.98] space-y-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-brand-600 font-bold">Step 3 of 5</span>
+                        <h2 class="text-2xl font-bold text-apple-black">Select Membership</h2>
+                    </div>
+                    <div id="membershipRecommendation" class="hidden bg-blue-50 border border-blue-100 rounded-2xl p-4">
+                        <div class="text-[10px] uppercase tracking-wider text-brand-600 font-bold">Recommended from your interests</div>
+                        <div id="recommendedTierName" class="text-sm font-bold text-slate-900 mt-1">-</div>
+                        <p id="recommendedTierReason" class="text-xs text-slate-500 mt-1 leading-relaxed"></p>
+                    </div>
+                    <div id="membershipsContainer" class="space-y-2 max-h-[350px] overflow-y-auto compact-scroll p-1"></div>
+                    <p id="err_membership" class="hidden text-xs text-rose-500">Select a membership.</p>
+                    <div class="flex justify-between">
+                        <button type="button" onclick="goToStep(3)" class="px-4 py-2 rounded-lg text-sm text-slate-500 hover:bg-slate-100 transition-all">Back</button>
+                        <button type="button" onclick="validateStep4()" class="px-6 py-2 rounded-full bg-apple-black hover:bg-opacity-90 text-white text-sm font-bold transition-all shadow-sm active:scale-95">Continue</button>
+                    </div>
+                </div>
+
+                <div id="step-5" class="step-pane hidden opacity-0 scale-[0.98] space-y-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-brand-600 font-bold">Step 4 of 5</span>
+                        <h2 class="text-2xl font-bold text-apple-black">Payment Verification</h2>
+                    </div>
+                    <div id="paymentRecommendation" class="hidden bg-blue-50 border border-blue-100 rounded-2xl p-4">
+                        <div class="text-[10px] uppercase tracking-wider text-brand-600 font-bold">Suggested package</div>
+                        <div id="paymentRecommendedTier" class="text-sm font-bold text-slate-900 mt-1">-</div>
+                        <p id="paymentRecommendedReason" class="text-xs text-slate-500 mt-1 leading-relaxed"></p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
+                        <div class="bg-apple-black text-white p-4 flex justify-between items-center gap-4">
+                            <div>
+                                <div class="text-xs uppercase text-blue-200">Official bKash</div>
+                                <div class="flex items-center gap-2 mt-1.5">
+                                    <span id="walletNum" class="font-mono font-bold tracking-wide">01916126304</span>
+                                    <button type="button" onclick="copyWalletNumber(event)" class="group relative overflow-hidden text-[10px] text-blue-200 hover:text-white font-bold transition-all flex items-center gap-1 bg-white/5 hover:bg-white/10 px-2.5 py-1.5 rounded-lg border border-white/10 active:scale-95">
+                                        <span id="copyTxt" class="relative z-10">Click to Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs uppercase text-slate-400">Amount</div>
+                                <div class="font-bold text-emerald-400 text-lg">BDT <span id="dueAmount">0</span></div>
+                            </div>
+                        </div>
+                        <div class="p-4 space-y-4">
+                            <div class="text-xs text-slate-500 bg-brand-50 border border-brand-100 rounded-xl p-3 leading-relaxed">Send money via bKash to the wallet above and submit the transaction credentials below. Use reference <strong>TeenX</strong>.</div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Sender Number *</label>
+                                    <input required type="tel" name="sender_number" id="senderNumber" inputmode="numeric" autocomplete="tel" placeholder="017XXXXXXXX" class="w-full mt-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none transition-all focus:border-brand-600 font-mono">
+                                    <p id="err_senderNumber" class="hidden text-xs text-rose-500 mt-1">Enter valid bKash sender number.</p>
+                                </div>
+                                <div>
+                                    <label class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Transaction ID *</label>
+                                    <input required type="text" name="transaction_id" id="transactionId" placeholder="e.g. KDL829LKLM" class="w-full mt-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm uppercase outline-none transition-all focus:border-brand-600 font-mono">
+                                    <p id="err_transactionId" class="hidden text-xs text-rose-500 mt-1">Enter valid transaction ID.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Screenshot Optional</label>
+                                <input type="file" accept="image/*" name="payment_screenshot" id="screenshotUpload" class="hidden" onchange="handleFileSelected(event)">
+                                <label for="screenshotUpload" class="cursor-pointer mt-1 border-2 border-dashed border-slate-200 rounded-xl p-4 flex items-center justify-center text-sm text-slate-500 hover:border-brand-600 transition-all bg-slate-50/50 hover:bg-slate-50">
+                                    <span id="uploadLabel">Upload payment screenshot</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" onclick="goToStep(4)" class="px-4 py-2 rounded-lg text-sm text-slate-500 hover:bg-slate-100 transition-all">Back</button>
+                        <button type="button" onclick="validateStep5()" class="px-6 py-2 rounded-full bg-apple-black hover:bg-opacity-90 text-white text-sm font-bold transition-all shadow-sm active:scale-95">Continue</button>
+                    </div>
+                </div>
+
+                <div id="step-6" class="step-pane hidden opacity-0 scale-[0.98] space-y-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-brand-600 font-bold">Step 5 of 5</span>
+                        <h2 class="text-2xl font-bold text-apple-black">Review & Submit</h2>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-4 text-sm">
+                        <div class="grid grid-cols-2 gap-4 border-b border-slate-100 pb-4">
+                            <div><div class="text-xs uppercase text-slate-400 font-semibold">Full Name</div><div id="revName" class="font-semibold text-slate-800 mt-0.5">-</div></div>
+                            <div><div class="text-xs uppercase text-slate-400 font-semibold">Mobile</div><div id="revMobile" class="font-mono font-semibold text-slate-800 mt-0.5">-</div></div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 border-b border-slate-100 pb-4">
+                            <div><div class="text-xs uppercase text-slate-400 font-semibold">District</div><div id="revDistrict" class="font-semibold text-slate-800 mt-0.5">-</div></div>
+                            <div><div class="text-xs uppercase text-slate-400 font-semibold">Institution</div><div id="revInstitution" class="font-semibold text-slate-800 mt-0.5">-</div></div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 border-b border-slate-100 pb-4">
+                            <div><div class="text-xs uppercase text-slate-400 font-semibold">Sender Number</div><div id="revSender" class="font-mono font-semibold text-slate-800 mt-0.5">-</div></div>
+                            <div><div class="text-xs uppercase text-slate-400 font-semibold">Transaction ID</div><div id="revTxn" class="font-mono font-semibold text-slate-800 mt-0.5 uppercase">-</div></div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 border-b border-slate-100 pb-4">
+                            <div><div class="text-xs uppercase text-slate-400 font-semibold">Membership</div><div id="revMembership" class="font-bold text-brand-600 mt-0.5">-</div></div>
+                            <div><div class="text-xs uppercase text-slate-400 font-semibold">Fee</div><div id="revFee" class="font-bold text-emerald-600 mt-0.5 font-mono">-</div></div>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase text-slate-400 mb-2 font-semibold">Interests</div>
+                            <div id="revInterests" class="flex flex-wrap gap-1.5"></div>
+                        </div>
+                        <label class="flex items-start gap-2.5 cursor-pointer mt-4">
+                            <input type="checkbox" id="agreement" class="mt-0.5 rounded border-slate-300 text-brand-600 focus:ring-brand-600/10">
+                            <span class="text-xs text-slate-500 font-medium leading-relaxed select-none">I confirm all registration and bKash payment verification details are correct.</span>
+                        </label>
+                        <p id="err_agreement" class="hidden text-xs text-rose-500 mt-1 font-medium">Accept the agreement to complete your registration.</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" onclick="goToStep(5)" class="px-4 py-2 rounded-lg text-sm text-slate-500 hover:bg-slate-100 transition-all">Back</button>
+                        <button type="button" id="btnSubmitFinal" onclick="submitOnboardingForm(event)" class="px-6 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold flex items-center gap-2 transition-all active:scale-95">
+                            <svg id="loadingSpinner" class="hidden animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                            </svg>
+                            <span id="btnSubmitText">Complete Registration</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="success-screen" class="hidden opacity-0 scale-[0.98] transition-all duration-300 text-center space-y-5">
+                    <div class="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center mx-auto text-emerald-600 font-bold text-xl">OK</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Registration Submitted</h2>
+                        <p class="text-slate-500 mt-2 text-sm max-w-md mx-auto leading-relaxed">Your onboarding request has been received. Our operations team will crosscheck your payment references.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-3xl p-5 max-w-sm mx-auto text-left shadow-sm space-y-3">
+                        <div class="flex justify-between border-b border-slate-100 pb-3"><span class="text-xs uppercase text-slate-400 font-medium">Membership</span><span id="succMembership" class="font-bold text-brand-600">-</span></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-3"><span class="text-xs uppercase text-slate-400 font-medium">Fee</span><span id="succFee" class="font-bold text-emerald-600 font-mono">-</span></div>
+                        <div class="flex justify-between pt-1"><span class="text-xs uppercase text-slate-400 font-medium">Audit Status</span><span class="inline-flex items-center gap-1 py-0.5 px-2.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-600 border border-amber-200/50">Pending Verification</span></div>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-normal max-w-xs mx-auto">An update notice will be sent to your contact mobile number within 4 hours.</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div id="achievementToast" class="fixed top-20 right-6 z-50 transform -translate-y-12 opacity-0 pointer-events-none transition-all duration-300 max-w-xs w-full bg-emerald-950 text-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3">
+        <div class="p-1 rounded-full bg-emerald-900 text-emerald-300">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div>
+            <p class="text-xs font-bold text-emerald-100" id="achTitle">Excellent Progress</p>
+            <p class="text-[10px] text-emerald-200/80 mt-0.5 leading-none" id="achSubtitle">Step parameters verified</p>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t border-gray-100">
+        <div class="container-custom py-10">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <img style="background-color: black;" src="assets/logo/teenxsvg.svg" alt="TeenX Bangladesh Logo" width="120" height="42" class="drop-shadow-sm" loading="lazy">
+                    <p class="text-apple-gray text-xs font-medium">National Youth Initiative for Trafficking Prevention</p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="index.html#join" class="text-apple-gray hover:text-apple-blue text-xs font-bold tracking-wider transition">Contact</a>
+                    <a href="programs.html" class="text-apple-gray hover:text-apple-blue text-xs font-bold tracking-wider transition">Programs</a>
+                    <a href="blog.html" class="text-apple-gray hover:text-apple-blue text-xs font-bold tracking-wider transition">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const domains = ["Leadership", "Technology", "Volunteering", "Creative Media", "Social Awareness", "Event Management", "Innovation", "Community Work"];
+        const tiers = [
+            { id: "volunteer", name: "Volunteer Member", price: 305, desc: "Basic volunteering work, awareness support, event help." },
+            { id: "junior", name: "Junior Member", price: 399, desc: "Basic access and small task participation." },
+            { id: "active", name: "Active Member", price: 499, desc: "Regular campaign and activities involvement." },
+            { id: "support", name: "Support Member", price: 549, desc: "Awareness development and communication help." },
+            { id: "associate", name: "Associate Member", price: 599, desc: "Project involvement and core planning tasks." },
+            { id: "senior", name: "Senior Member", price: 649, desc: "Team coordination support and local activities leadership." },
+            { id: "core", name: "Core Member", price: 699, desc: "Decision processes and event setup coordination." },
+            { id: "executive", name: "Executive Member", price: 799, desc: "Strategic operations and high district authority.", highlight: "Executive" },
+            { id: "leadership", name: "Leadership Member", price: 899, desc: "Team building and platform development control.", highlight: "Strategic" },
+            { id: "elite", name: "Elite Member", price: 999, desc: "Full executive rights, elite network privileges, and top decision vote.", highlight: "Most Elite" }
+        ];
+        let currentStep = 1;
+        let selectedInterests = [];
+        let selectedTierId = null;
+        let recommendedTierId = null;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initInterests();
+            initMemberships();
+            setupLiveFieldValidation();
+        });
+
+        function initInterests() {
+            const container = document.getElementById("interestsGrid");
+            container.innerHTML = "";
+            domains.forEach((item) => {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.onclick = (e) => toggleInterest(item, button, e);
+                button.className = "w-full text-left p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-600 hover:bg-brand-50/10 transition-all duration-200 select-none flex items-center justify-between";
+                button.innerHTML = `<span class="text-xs font-semibold text-slate-700 tracking-wide">${item}</span><span class="text-slate-300">+</span>`;
+                container.appendChild(button);
+            });
+        }
+
+        function initMemberships() {
+            const container = document.getElementById("membershipsContainer");
+            container.innerHTML = "";
+            tiers.forEach(tier => {
+                const card = document.createElement("div");
+                const borderClass = tier.highlight ? "border-brand-100 hover:border-brand-300 bg-brand-50/10" : "border-slate-200 hover:border-slate-300 bg-white";
+                const tagBadge = tier.highlight ? `<span class="px-1.5 py-0.5 text-[8px] font-extrabold tracking-wider text-brand-600 bg-brand-100/50 rounded-md">${tier.highlight.toUpperCase()}</span>` : "";
+                card.id = `membership-card-${tier.id}`;
+                card.className = `p-3.5 rounded-2xl border ${borderClass} cursor-pointer transition-all duration-200 flex items-center justify-between gap-3 select-none group`;
+                card.innerHTML = `
+                    <div class="flex-grow space-y-0.5">
+                        <div class="flex items-center gap-1.5"><h3 class="text-xs font-bold text-slate-800 transition-colors">${tier.name}</h3>${tagBadge}</div>
+                        <p class="text-[10px] text-slate-400 font-medium leading-normal">${tier.desc}</p>
+                    </div>
+                    <div class="flex items-center gap-4 shrink-0">
+                        <div class="text-xs font-mono font-bold text-emerald-600 bg-emerald-500/5 px-2 py-0.5 rounded border border-emerald-500/10">BDT ${tier.price}</div>
+                        <button type="button" class="tier-btn py-1 px-3.5 rounded-full bg-white border border-slate-200 text-[11px] font-bold text-slate-600 shadow-sm transition-all">Select</button>
+                    </div>`;
+                card.addEventListener("click", (e) => selectTier(tier.id, tier.price, e));
+                container.appendChild(card);
+            });
+        }
+
+        function setupLiveFieldValidation() {
+            const validate = (el, condition, errorId) => {
+                const errorMsg = document.getElementById(errorId);
+                if (condition) {
+                    el.classList.remove("input-error", "border-slate-200");
+                    el.classList.add("input-validated");
+                    if (errorMsg) errorMsg.classList.add("hidden");
+                } else {
+                    el.classList.remove("input-validated");
+                }
+            };
+            [["fullName", 3, "err_fullName"], ["mobileNumber", 10, "err_mobileNumber"], ["district", 2, "err_district"], ["senderNumber", 10, "err_senderNumber"], ["transactionId", 6, "err_transactionId"]].forEach(([id, min, errorId]) => {
+                const el = document.getElementById(id);
+                el.addEventListener("input", () => {
+                    validate(el, el.value.trim().length >= min, errorId);
+                    handleInputProgress();
+                });
+            });
+        }
+
+        function toggleInterest(interest, buttonElement, event) {
+            document.getElementById("err_interests").classList.add("hidden");
+            const index = selectedInterests.indexOf(interest);
+            if (index > -1) {
+                selectedInterests.splice(index, 1);
+                buttonElement.classList.remove("border-brand-600", "bg-brand-50/10");
+                buttonElement.classList.add("border-slate-200", "bg-slate-50");
+                buttonElement.querySelector("span:last-child").innerText = "+";
+            } else {
+                selectedInterests.push(interest);
+                buttonElement.classList.remove("border-slate-200", "bg-slate-50");
+                buttonElement.classList.add("border-brand-600", "bg-brand-50/10");
+                buttonElement.querySelector("span:last-child").innerText = "Selected";
+                if (event && event.clientX) triggerBurst(event.clientX, event.clientY);
+            }
+            document.getElementById("hiddenInterests").value = selectedInterests.join(", ");
+            handleInputProgress();
+        }
+
+        function selectTier(tierId, price, event) {
+            document.getElementById("err_membership").classList.add("hidden");
+            if (selectedTierId) {
+                const prevCard = document.getElementById(`membership-card-${selectedTierId}`);
+                const prevTier = tiers.find(t => t.id === selectedTierId);
+                if (prevCard) {
+                    prevCard.classList.remove("border-brand-600", "bg-brand-50/20");
+                    prevCard.classList.add(prevTier.highlight ? "border-brand-100" : "border-slate-200", prevTier.highlight ? "bg-brand-50/10" : "bg-white");
+                    const prevBtn = prevCard.querySelector(".tier-btn");
+                    prevBtn.innerText = "Select";
+                    prevBtn.className = "tier-btn py-1 px-3.5 rounded-full bg-white border border-slate-200 text-[11px] font-bold text-slate-600 shadow-sm transition-all";
+                }
+            }
+            selectedTierId = tierId;
+            const activeTier = tiers.find(t => t.id === tierId);
+            const newCard = document.getElementById(`membership-card-${tierId}`);
+            if (newCard) {
+                newCard.classList.remove("border-slate-200", "border-brand-100", "bg-white", "bg-brand-50/10");
+                newCard.classList.add("border-brand-600", "bg-brand-50/20");
+                const newBtn = newCard.querySelector(".tier-btn");
+                newBtn.innerText = "Selected";
+                newBtn.className = "tier-btn py-1 px-3.5 rounded-full bg-brand-600 text-white text-[11px] font-bold shadow-sm transition-all";
+                if (event && event.clientX) triggerBurst(event.clientX, event.clientY);
+                triggerAchievementToast("Configuration locked", `Selected path: ${activeTier.name}`);
+            }
+            document.getElementById("hiddenMembership").value = activeTier.name;
+            document.getElementById("hiddenFee").value = `${activeTier.price} BDT`;
+            document.getElementById("dueAmount").innerText = activeTier.price;
+            document.getElementById("revFee").innerText = `BDT ${activeTier.price}`;
+            document.getElementById("revMembership").innerText = activeTier.name;
+            if (recommendedTierId) updateRecommendationPanels();
+            handleInputProgress();
+        }
+
+        function getRecommendedTier() {
+            const has = (interest) => selectedInterests.includes(interest);
+            let id = "active";
+            let reason = "A balanced package for regular TeenX activities and campaign participation.";
+
+            if (selectedInterests.length >= 5) {
+                id = "elite";
+                reason = "You selected a broad mix of interests, so the Elite Member package gives the widest access and decision privileges.";
+            } else if (has("Leadership") && (has("Event Management") || has("Community Work"))) {
+                id = "leadership";
+                reason = "Your leadership and coordination interests fit a strategic team-building role.";
+            } else if (has("Technology") && has("Innovation")) {
+                id = "executive";
+                reason = "Your technology and innovation focus fits strategic operations and higher-responsibility projects.";
+            } else if (has("Leadership")) {
+                id = "senior";
+                reason = "Your leadership interest fits team coordination and local activity leadership.";
+            } else if (has("Event Management")) {
+                id = "core";
+                reason = "Your event management interest fits planning, setup, and operational coordination.";
+            } else if (has("Technology") || has("Innovation")) {
+                id = "associate";
+                reason = "Your technical or innovation focus fits project involvement and planning tasks.";
+            } else if (has("Creative Media") || has("Social Awareness")) {
+                id = "support";
+                reason = "Your communication-focused interests fit awareness development and outreach support.";
+            } else if (has("Volunteering") && has("Community Work")) {
+                id = "active";
+                reason = "Your volunteering and community-work interests fit regular campaign participation.";
+            } else if (has("Volunteering") || has("Community Work")) {
+                id = "volunteer";
+                reason = "Your interest fits basic volunteering work, awareness support, and event help.";
+            }
+
+            return { tier: tiers.find(t => t.id === id), reason };
+        }
+
+        function applyRecommendedTier() {
+            if (selectedInterests.length === 0) return;
+            const recommendation = getRecommendedTier();
+            if (!recommendation.tier) return;
+            recommendedTierId = recommendation.tier.id;
+            document.getElementById("hiddenRecommendedMembership").value = `${recommendation.tier.name} - ${recommendation.reason}`;
+            updateRecommendationPanels(recommendation);
+            if (!selectedTierId) {
+                selectTier(recommendation.tier.id, recommendation.tier.price);
+            }
+        }
+
+        function updateRecommendationPanels(recommendation = getRecommendedTier()) {
+            if (!recommendation.tier) return;
+            const selectedTier = selectedTierId ? tiers.find(t => t.id === selectedTierId) : recommendation.tier;
+            const summary = `${recommendation.tier.name} - BDT ${recommendation.tier.price}`;
+            const paymentSummary = selectedTier && selectedTier.id !== recommendation.tier.id
+                ? `${summary}. You selected ${selectedTier.name}.`
+                : `${summary}. This package is selected.`;
+
+            document.getElementById("membershipRecommendation").classList.remove("hidden");
+            document.getElementById("recommendedTierName").innerText = summary;
+            document.getElementById("recommendedTierReason").innerText = recommendation.reason;
+
+            document.getElementById("paymentRecommendation").classList.remove("hidden");
+            document.getElementById("paymentRecommendedTier").innerText = paymentSummary;
+            document.getElementById("paymentRecommendedReason").innerText = recommendation.reason;
+        }
+
+        function triggerBurst(x, y) {
+            const colors = ["#3b82f6", "#10b981", "#6366f1", "#1d4ed8"];
+            for (let i = 0; i < 10; i++) {
+                const particle = document.createElement("div");
+                particle.className = "reward-particle";
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 80 + 20;
+                particle.style.setProperty("--x-move", `${Math.cos(angle) * distance}px`);
+                particle.style.setProperty("--y-move", `${Math.sin(angle) * distance}px`);
+                const size = Math.random() * 5 + 3;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 600);
+            }
+        }
+
+        function triggerAchievementToast(title, subtitle) {
+            const toast = document.getElementById("achievementToast");
+            document.getElementById("achTitle").innerText = title;
+            document.getElementById("achSubtitle").innerText = subtitle;
+            toast.classList.remove("-translate-y-12", "opacity-0", "pointer-events-none");
+            toast.classList.add("translate-y-0", "opacity-100", "pointer-events-auto");
+            setTimeout(() => {
+                toast.classList.remove("translate-y-0", "opacity-100", "pointer-events-auto");
+                toast.classList.add("-translate-y-12", "opacity-0", "pointer-events-none");
+            }, 3000);
+        }
+
+        function handleInputProgress() {
+            let percent = 0;
+            let statusText = "Ready";
+            if (currentStep === 2) {
+                let filled = 0;
+                if (document.getElementById("fullName").value.trim().length > 2) filled++;
+                if (document.getElementById("mobileNumber").value.trim().length > 9) filled++;
+                if (document.getElementById("district").value.trim().length > 1) filled++;
+                percent = Math.min(Math.round((filled / 3) * 20), 20);
+                statusText = filled >= 3 ? "Basic fields validated" : "Complete profile fields";
+            } else if (currentStep === 3) {
+                percent = 20 + (selectedInterests.length > 0 ? 15 : 0);
+                statusText = selectedInterests.length > 0 ? "Interest domains selected" : "Select interests";
+            } else if (currentStep === 4) {
+                percent = 35 + (selectedTierId ? 30 : 0);
+                statusText = selectedTierId ? "Membership selected" : "Select membership";
+            } else if (currentStep === 5) {
+                let paymentScore = 0;
+                if (document.getElementById("senderNumber").value.trim().length > 9) paymentScore += 15;
+                if (document.getElementById("transactionId").value.trim().length > 5) paymentScore += 15;
+                percent = 65 + paymentScore;
+                statusText = percent >= 95 ? "Payment details ready" : "Verify transaction details";
+            } else if (currentStep === 6) {
+                percent = 95;
+                statusText = "Review and confirm";
+            }
+            document.getElementById("progressBar").style.width = `${percent}%`;
+            document.getElementById("percentText").innerText = `${percent}% Done`;
+            document.getElementById("encouragementLabel").innerText = statusText;
+        }
+
+        function goToStep(targetStep, event) {
+            const currentPane = document.getElementById(`step-${currentStep}`);
+            const targetPane = document.getElementById(`step-${targetStep}`);
+            const statusPanel = document.getElementById("statusPanel");
+            statusPanel.classList.toggle("hidden", targetStep === 1);
+            if (currentPane) {
+                currentPane.classList.add("opacity-0", "scale-[0.98]");
+                setTimeout(() => {
+                    currentPane.classList.add("hidden");
+                    targetPane.classList.remove("hidden");
+                    setTimeout(() => targetPane.classList.remove("opacity-0", "scale-[0.98]"), 50);
+                }, 180);
+            }
+            if (event && event.clientX) triggerBurst(event.clientX, event.clientY);
+            currentStep = targetStep;
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setTimeout(handleInputProgress, 200);
+        }
+
+        function validateStep2() {
+            const nameInp = document.getElementById("fullName");
+            const phoneInp = document.getElementById("mobileNumber");
+            const distInp = document.getElementById("district");
+            const nameVal = nameInp.value.trim();
+            const phoneVal = phoneInp.value.trim();
+            const distVal = distInp.value.trim();
+            let invalid = false;
+            [[nameInp, nameVal.length < 3, "err_fullName"], [phoneInp, phoneVal.length < 10, "err_mobileNumber"], [distInp, distVal.length < 2, "err_district"]].forEach(([el, bad, id]) => {
+                el.classList.toggle("input-error", bad);
+                document.getElementById(id).classList.toggle("hidden", !bad);
+                if (bad) invalid = true;
+            });
+            if (invalid) {
+                (nameVal.length < 3 ? nameInp : (phoneVal.length < 10 ? phoneInp : distInp)).focus();
+                return;
+            }
+            document.getElementById("revName").innerText = nameVal;
+            document.getElementById("revMobile").innerText = phoneVal;
+            document.getElementById("revDistrict").innerText = distVal;
+            const instVal = document.getElementById("institution").value.trim();
+            document.getElementById("revInstitution").innerText = instVal || "N/A";
+            triggerAchievementToast("Identity setup complete", `Welcome, ${nameVal.split(" ")[0]}`);
+            goToStep(3);
+        }
+
+        function validateStep3() {
+            if (selectedInterests.length === 0) {
+                const errorP = document.getElementById("err_interests");
+                errorP.classList.remove("hidden");
+                errorP.classList.add("input-error");
+                setTimeout(() => errorP.classList.remove("input-error"), 400);
+                return;
+            }
+            const revInterests = document.getElementById("revInterests");
+            revInterests.innerHTML = "";
+            selectedInterests.forEach(item => {
+                const span = document.createElement("span");
+                span.className = "px-2.5 py-0.5 bg-brand-100/50 border border-brand-200/50 text-[9px] font-bold text-brand-600 rounded-md uppercase tracking-wide";
+                span.innerText = item;
+                revInterests.appendChild(span);
+            });
+            applyRecommendedTier();
+            triggerAchievementToast("Domains verified", `${selectedInterests.length} focal areas loaded`);
+            goToStep(4);
+        }
+
+        function validateStep4() {
+            if (!selectedTierId) {
+                const errorP = document.getElementById("err_membership");
+                errorP.classList.remove("hidden");
+                errorP.classList.add("input-error");
+                setTimeout(() => errorP.classList.remove("input-error"), 400);
+                return;
+            }
+            if (recommendedTierId) updateRecommendationPanels();
+            goToStep(5);
+        }
+
+        function validateStep5() {
+            const senderInp = document.getElementById("senderNumber");
+            const txnInp = document.getElementById("transactionId");
+            const senderNo = senderInp.value.trim();
+            const txnId = txnInp.value.trim();
+            let invalid = false;
+            [[senderInp, senderNo.length < 10, "err_senderNumber"], [txnInp, txnId.length < 6, "err_transactionId"]].forEach(([el, bad, id]) => {
+                el.classList.toggle("input-error", bad);
+                document.getElementById(id).classList.toggle("hidden", !bad);
+                if (bad) invalid = true;
+            });
+            if (invalid) {
+                (senderNo.length < 10 ? senderInp : txnInp).focus();
+                return;
+            }
+            document.getElementById("revSender").innerText = senderNo;
+            document.getElementById("revTxn").innerText = txnId;
+            triggerAchievementToast("Payment details logged", "Verification code saved");
+            goToStep(6);
+        }
+
+        function copyWalletNumber(event) {
+            const num = document.getElementById("walletNum").innerText;
+            navigator.clipboard.writeText(num).catch(() => {
+                const dummy = document.createElement("textarea");
+                document.body.appendChild(dummy);
+                dummy.value = num;
+                dummy.select();
+                document.execCommand("copy");
+                document.body.removeChild(dummy);
+            });
+            const copyTxt = document.getElementById("copyTxt");
+            copyTxt.innerText = "Number Copied";
+            if (event && event.clientX) triggerBurst(event.clientX, event.clientY);
+            setTimeout(() => { copyTxt.innerText = "Click to Copy"; }, 2500);
+        }
+
+        function handleFileSelected(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const label = document.getElementById("uploadLabel");
+                label.innerText = file.name.length > 25 ? file.name.substring(0, 25) + "..." : file.name;
+                label.className = "font-semibold text-emerald-600";
+                triggerAchievementToast("Slip added", "Image loaded successfully");
+            }
+        }
+
+        function submitOnboardingForm(event) {
+            const agreeCheck = document.getElementById("agreement");
+            if (!agreeCheck.checked) {
+                document.getElementById("err_agreement").classList.remove("hidden");
+                return;
+            }
+            document.getElementById("err_agreement").classList.add("hidden");
+            const spinner = document.getElementById("loadingSpinner");
+            const btnText = document.getElementById("btnSubmitText");
+            spinner.classList.remove("hidden");
+            btnText.innerText = "Transmitting...";
+            const form = document.getElementById("registrationForm");
+            fetch("/", { method: "POST", body: new FormData(form) })
+                .then(() => {
+                    if (event && event.clientX) triggerBurst(event.clientX, event.clientY);
+                    const activeTier = tiers.find(t => t.id === selectedTierId);
+                    document.getElementById("succMembership").innerText = activeTier.name;
+                    document.getElementById("succFee").innerText = `BDT ${activeTier.price}`;
+                    document.getElementById("statusPanel").classList.add("hidden");
+                    const currentPane = document.getElementById("step-6");
+                    const successPane = document.getElementById("success-screen");
+                    currentPane.classList.add("opacity-0", "scale-[0.98]");
+                    setTimeout(() => {
+                        currentPane.classList.add("hidden");
+                        successPane.classList.remove("hidden");
+                        setTimeout(() => successPane.classList.remove("opacity-0", "scale-[0.98]"), 50);
+                    }, 180);
+                })
+                .catch(() => {
+                    spinner.classList.add("hidden");
+                    btnText.innerText = "Complete Registration";
+                    triggerAchievementToast("Connection Error", "Please try resubmitting details");
+                });
+        }
+    </script>
+</body>
+</html>
